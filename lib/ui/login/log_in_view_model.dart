@@ -3,7 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../data/repository/firebase_respotiory_impl.dart';
 import '../../data/utils/utils.dart';
-import '../../domain/model/log_in_state.dart';
+import '../../domain/entities/state/log_in_state.dart';
 import '../../domain/repository/firebase_repository.dart';
 
 final logInViewModelProvider =
