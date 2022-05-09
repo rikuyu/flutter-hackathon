@@ -20,10 +20,10 @@ Response _$ResponseFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$Response {
-  int get count => throw _privateConstructorUsedError;
-  int get start => throw _privateConstructorUsedError;
-  int get limit => throw _privateConstructorUsedError;
-  List<Event> get events => throw _privateConstructorUsedError;
+  int? get count => throw _privateConstructorUsedError;
+  int? get start => throw _privateConstructorUsedError;
+  int? get limit => throw _privateConstructorUsedError;
+  List<Event?>? get events => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -35,7 +35,7 @@ mixin _$Response {
 abstract class $ResponseCopyWith<$Res> {
   factory $ResponseCopyWith(Response value, $Res Function(Response) then) =
       _$ResponseCopyWithImpl<$Res>;
-  $Res call({int count, int start, int limit, List<Event> events});
+  $Res call({int? count, int? start, int? limit, List<Event?>? events});
 }
 
 /// @nodoc
@@ -57,19 +57,19 @@ class _$ResponseCopyWithImpl<$Res> implements $ResponseCopyWith<$Res> {
       count: count == freezed
           ? _value.count
           : count // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
       start: start == freezed
           ? _value.start
           : start // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
       limit: limit == freezed
           ? _value.limit
           : limit // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
       events: events == freezed
           ? _value.events
           : events // ignore: cast_nullable_to_non_nullable
-              as List<Event>,
+              as List<Event?>?,
     ));
   }
 }
@@ -80,7 +80,7 @@ abstract class _$$_ResponseCopyWith<$Res> implements $ResponseCopyWith<$Res> {
           _$_Response value, $Res Function(_$_Response) then) =
       __$$_ResponseCopyWithImpl<$Res>;
   @override
-  $Res call({int count, int start, int limit, List<Event> events});
+  $Res call({int? count, int? start, int? limit, List<Event?>? events});
 }
 
 /// @nodoc
@@ -104,47 +104,50 @@ class __$$_ResponseCopyWithImpl<$Res> extends _$ResponseCopyWithImpl<$Res>
       count: count == freezed
           ? _value.count
           : count // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
       start: start == freezed
           ? _value.start
           : start // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
       limit: limit == freezed
           ? _value.limit
           : limit // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
       events: events == freezed
           ? _value._events
           : events // ignore: cast_nullable_to_non_nullable
-              as List<Event>,
+              as List<Event?>?,
     ));
   }
 }
 
 /// @nodoc
-@JsonSerializable()
+
+@JsonSerializable(explicitToJson: true)
 class _$_Response implements _Response {
   const _$_Response(
       {required this.count,
       required this.start,
       required this.limit,
-      required final List<Event> events})
+      required final List<Event?>? events})
       : _events = events;
 
   factory _$_Response.fromJson(Map<String, dynamic> json) =>
       _$$_ResponseFromJson(json);
 
   @override
-  final int count;
+  final int? count;
   @override
-  final int start;
+  final int? start;
   @override
-  final int limit;
-  final List<Event> _events;
+  final int? limit;
+  final List<Event?>? _events;
   @override
-  List<Event> get events {
+  List<Event?>? get events {
+    final value = _events;
+    if (value == null) return null;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_events);
+    return EqualUnmodifiableListView(value);
   }
 
   @override
@@ -185,21 +188,21 @@ class _$_Response implements _Response {
 
 abstract class _Response implements Response {
   const factory _Response(
-      {required final int count,
-      required final int start,
-      required final int limit,
-      required final List<Event> events}) = _$_Response;
+      {required final int? count,
+      required final int? start,
+      required final int? limit,
+      required final List<Event?>? events}) = _$_Response;
 
   factory _Response.fromJson(Map<String, dynamic> json) = _$_Response.fromJson;
 
   @override
-  int get count => throw _privateConstructorUsedError;
+  int? get count => throw _privateConstructorUsedError;
   @override
-  int get start => throw _privateConstructorUsedError;
+  int? get start => throw _privateConstructorUsedError;
   @override
-  int get limit => throw _privateConstructorUsedError;
+  int? get limit => throw _privateConstructorUsedError;
   @override
-  List<Event> get events => throw _privateConstructorUsedError;
+  List<Event?>? get events => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$$_ResponseCopyWith<_$_Response> get copyWith =>

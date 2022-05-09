@@ -20,8 +20,8 @@ Ticket _$TicketFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$Ticket {
-  String get name => throw _privateConstructorUsedError;
-  String get price => throw _privateConstructorUsedError;
+  String? get name => throw _privateConstructorUsedError;
+  String? get price => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -32,7 +32,7 @@ mixin _$Ticket {
 abstract class $TicketCopyWith<$Res> {
   factory $TicketCopyWith(Ticket value, $Res Function(Ticket) then) =
       _$TicketCopyWithImpl<$Res>;
-  $Res call({String name, String price});
+  $Res call({String? name, String? price});
 }
 
 /// @nodoc
@@ -52,11 +52,11 @@ class _$TicketCopyWithImpl<$Res> implements $TicketCopyWith<$Res> {
       name: name == freezed
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       price: price == freezed
           ? _value.price
           : price // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ));
   }
 }
@@ -66,7 +66,7 @@ abstract class _$$_TicketCopyWith<$Res> implements $TicketCopyWith<$Res> {
   factory _$$_TicketCopyWith(_$_Ticket value, $Res Function(_$_Ticket) then) =
       __$$_TicketCopyWithImpl<$Res>;
   @override
-  $Res call({String name, String price});
+  $Res call({String? name, String? price});
 }
 
 /// @nodoc
@@ -87,17 +87,18 @@ class __$$_TicketCopyWithImpl<$Res> extends _$TicketCopyWithImpl<$Res>
       name: name == freezed
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       price: price == freezed
           ? _value.price
           : price // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ));
   }
 }
 
 /// @nodoc
-@JsonSerializable()
+
+@JsonSerializable(explicitToJson: true)
 class _$_Ticket implements _Ticket {
   const _$_Ticket({required this.name, required this.price});
 
@@ -105,9 +106,9 @@ class _$_Ticket implements _Ticket {
       _$$_TicketFromJson(json);
 
   @override
-  final String name;
+  final String? name;
   @override
-  final String price;
+  final String? price;
 
   @override
   String toString() {
@@ -143,14 +144,14 @@ class _$_Ticket implements _Ticket {
 
 abstract class _Ticket implements Ticket {
   const factory _Ticket(
-      {required final String name, required final String price}) = _$_Ticket;
+      {required final String? name, required final String? price}) = _$_Ticket;
 
   factory _Ticket.fromJson(Map<String, dynamic> json) = _$_Ticket.fromJson;
 
   @override
-  String get name => throw _privateConstructorUsedError;
+  String? get name => throw _privateConstructorUsedError;
   @override
-  String get price => throw _privateConstructorUsedError;
+  String? get price => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$$_TicketCopyWith<_$_Ticket> get copyWith =>

@@ -20,9 +20,9 @@ Owner _$OwnerFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$Owner {
-  String get id => throw _privateConstructorUsedError;
-  String get price => throw _privateConstructorUsedError;
-  String get url => throw _privateConstructorUsedError;
+  String? get id => throw _privateConstructorUsedError;
+  String? get price => throw _privateConstructorUsedError;
+  String? get url => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -33,7 +33,7 @@ mixin _$Owner {
 abstract class $OwnerCopyWith<$Res> {
   factory $OwnerCopyWith(Owner value, $Res Function(Owner) then) =
       _$OwnerCopyWithImpl<$Res>;
-  $Res call({String id, String price, String url});
+  $Res call({String? id, String? price, String? url});
 }
 
 /// @nodoc
@@ -54,15 +54,15 @@ class _$OwnerCopyWithImpl<$Res> implements $OwnerCopyWith<$Res> {
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       price: price == freezed
           ? _value.price
           : price // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       url: url == freezed
           ? _value.url
           : url // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ));
   }
 }
@@ -72,7 +72,7 @@ abstract class _$$_OwnerCopyWith<$Res> implements $OwnerCopyWith<$Res> {
   factory _$$_OwnerCopyWith(_$_Owner value, $Res Function(_$_Owner) then) =
       __$$_OwnerCopyWithImpl<$Res>;
   @override
-  $Res call({String id, String price, String url});
+  $Res call({String? id, String? price, String? url});
 }
 
 /// @nodoc
@@ -94,21 +94,22 @@ class __$$_OwnerCopyWithImpl<$Res> extends _$OwnerCopyWithImpl<$Res>
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       price: price == freezed
           ? _value.price
           : price // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       url: url == freezed
           ? _value.url
           : url // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ));
   }
 }
 
 /// @nodoc
-@JsonSerializable()
+
+@JsonSerializable(explicitToJson: true)
 class _$_Owner implements _Owner {
   const _$_Owner({required this.id, required this.price, required this.url});
 
@@ -116,11 +117,11 @@ class _$_Owner implements _Owner {
       _$$_OwnerFromJson(json);
 
   @override
-  final String id;
+  final String? id;
   @override
-  final String price;
+  final String? price;
   @override
-  final String url;
+  final String? url;
 
   @override
   String toString() {
@@ -158,18 +159,18 @@ class _$_Owner implements _Owner {
 
 abstract class _Owner implements Owner {
   const factory _Owner(
-      {required final String id,
-      required final String price,
-      required final String url}) = _$_Owner;
+      {required final String? id,
+      required final String? price,
+      required final String? url}) = _$_Owner;
 
   factory _Owner.fromJson(Map<String, dynamic> json) = _$_Owner.fromJson;
 
   @override
-  String get id => throw _privateConstructorUsedError;
+  String? get id => throw _privateConstructorUsedError;
   @override
-  String get price => throw _privateConstructorUsedError;
+  String? get price => throw _privateConstructorUsedError;
   @override
-  String get url => throw _privateConstructorUsedError;
+  String? get url => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$$_OwnerCopyWith<_$_Owner> get copyWith =>

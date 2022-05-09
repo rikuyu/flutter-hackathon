@@ -7,9 +7,9 @@ part of 'owner.dart';
 // **************************************************************************
 
 _$_Owner _$$_OwnerFromJson(Map<String, dynamic> json) => _$_Owner(
-      id: json['id'] as String,
-      price: json['price'] as String,
-      url: json['url'] as String,
+      id: json['id'] as String?,
+      price: json['price'] as String?,
+      url: json['url'] as String?,
     );
 
 Map<String, dynamic> _$$_OwnerToJson(_$_Owner instance) => <String, dynamic>{

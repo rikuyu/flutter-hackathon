@@ -20,33 +20,33 @@ Event _$EventFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$Event {
-  String get eventId => throw _privateConstructorUsedError;
-  String get title => throw _privateConstructorUsedError;
-  String get summary => throw _privateConstructorUsedError;
-  String get contents => throw _privateConstructorUsedError;
-  String get imagePath => throw _privateConstructorUsedError;
-  String get startedAt => throw _privateConstructorUsedError;
-  String get endedAt => throw _privateConstructorUsedError;
-  String get openedAt => throw _privateConstructorUsedError;
-  String get entryStartedAt => throw _privateConstructorUsedError;
-  String get entryEndedAt => throw _privateConstructorUsedError;
-  String get cancelAt => throw _privateConstructorUsedError;
-  String get capacity => throw _privateConstructorUsedError;
-  String get url => throw _privateConstructorUsedError;
-  List<String> get paymentTypes => throw _privateConstructorUsedError;
-  List<Ticket> get tickets => throw _privateConstructorUsedError;
-  String get cancelPolicy => throw _privateConstructorUsedError;
-  String get prefectureId => throw _privateConstructorUsedError;
-  String get address => throw _privateConstructorUsedError;
-  String get place => throw _privateConstructorUsedError;
-  String get lat => throw _privateConstructorUsedError;
-  String get lng => throw _privateConstructorUsedError;
-  int get accepted => throw _privateConstructorUsedError;
-  int get waiting => throw _privateConstructorUsedError;
-  List<String> get categories => throw _privateConstructorUsedError;
-  List<Owner> get owners => throw _privateConstructorUsedError;
-  String get embedCode => throw _privateConstructorUsedError;
-  String get updatedAt => throw _privateConstructorUsedError;
+  String? get eventId => throw _privateConstructorUsedError;
+  String? get title => throw _privateConstructorUsedError;
+  String? get summary => throw _privateConstructorUsedError;
+  String? get contents => throw _privateConstructorUsedError;
+  String? get imagePath => throw _privateConstructorUsedError;
+  String? get startedAt => throw _privateConstructorUsedError;
+  String? get endedAt => throw _privateConstructorUsedError;
+  String? get openedAt => throw _privateConstructorUsedError;
+  String? get entryStartedAt => throw _privateConstructorUsedError;
+  String? get entryEndedAt => throw _privateConstructorUsedError;
+  String? get cancelAt => throw _privateConstructorUsedError;
+  String? get capacity => throw _privateConstructorUsedError;
+  String? get url => throw _privateConstructorUsedError;
+  List<String?>? get paymentTypes => throw _privateConstructorUsedError;
+  List<Ticket?>? get tickets => throw _privateConstructorUsedError;
+  String? get cancelPolicy => throw _privateConstructorUsedError;
+  String? get prefectureId => throw _privateConstructorUsedError;
+  String? get address => throw _privateConstructorUsedError;
+  String? get place => throw _privateConstructorUsedError;
+  String? get lat => throw _privateConstructorUsedError;
+  String? get lng => throw _privateConstructorUsedError;
+  int? get accepted => throw _privateConstructorUsedError;
+  int? get waiting => throw _privateConstructorUsedError;
+  List<String?>? get categories => throw _privateConstructorUsedError;
+  List<Owner?>? get owners => throw _privateConstructorUsedError;
+  String? get embedCode => throw _privateConstructorUsedError;
+  String? get updatedAt => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -58,33 +58,33 @@ abstract class $EventCopyWith<$Res> {
   factory $EventCopyWith(Event value, $Res Function(Event) then) =
       _$EventCopyWithImpl<$Res>;
   $Res call(
-      {String eventId,
-      String title,
-      String summary,
-      String contents,
-      String imagePath,
-      String startedAt,
-      String endedAt,
-      String openedAt,
-      String entryStartedAt,
-      String entryEndedAt,
-      String cancelAt,
-      String capacity,
-      String url,
-      List<String> paymentTypes,
-      List<Ticket> tickets,
-      String cancelPolicy,
-      String prefectureId,
-      String address,
-      String place,
-      String lat,
-      String lng,
-      int accepted,
-      int waiting,
-      List<String> categories,
-      List<Owner> owners,
-      String embedCode,
-      String updatedAt});
+      {String? eventId,
+      String? title,
+      String? summary,
+      String? contents,
+      String? imagePath,
+      String? startedAt,
+      String? endedAt,
+      String? openedAt,
+      String? entryStartedAt,
+      String? entryEndedAt,
+      String? cancelAt,
+      String? capacity,
+      String? url,
+      List<String?>? paymentTypes,
+      List<Ticket?>? tickets,
+      String? cancelPolicy,
+      String? prefectureId,
+      String? address,
+      String? place,
+      String? lat,
+      String? lng,
+      int? accepted,
+      int? waiting,
+      List<String?>? categories,
+      List<Owner?>? owners,
+      String? embedCode,
+      String? updatedAt});
 }
 
 /// @nodoc
@@ -129,111 +129,111 @@ class _$EventCopyWithImpl<$Res> implements $EventCopyWith<$Res> {
       eventId: eventId == freezed
           ? _value.eventId
           : eventId // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       title: title == freezed
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       summary: summary == freezed
           ? _value.summary
           : summary // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       contents: contents == freezed
           ? _value.contents
           : contents // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       imagePath: imagePath == freezed
           ? _value.imagePath
           : imagePath // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       startedAt: startedAt == freezed
           ? _value.startedAt
           : startedAt // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       endedAt: endedAt == freezed
           ? _value.endedAt
           : endedAt // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       openedAt: openedAt == freezed
           ? _value.openedAt
           : openedAt // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       entryStartedAt: entryStartedAt == freezed
           ? _value.entryStartedAt
           : entryStartedAt // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       entryEndedAt: entryEndedAt == freezed
           ? _value.entryEndedAt
           : entryEndedAt // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       cancelAt: cancelAt == freezed
           ? _value.cancelAt
           : cancelAt // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       capacity: capacity == freezed
           ? _value.capacity
           : capacity // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       url: url == freezed
           ? _value.url
           : url // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       paymentTypes: paymentTypes == freezed
           ? _value.paymentTypes
           : paymentTypes // ignore: cast_nullable_to_non_nullable
-              as List<String>,
+              as List<String?>?,
       tickets: tickets == freezed
           ? _value.tickets
           : tickets // ignore: cast_nullable_to_non_nullable
-              as List<Ticket>,
+              as List<Ticket?>?,
       cancelPolicy: cancelPolicy == freezed
           ? _value.cancelPolicy
           : cancelPolicy // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       prefectureId: prefectureId == freezed
           ? _value.prefectureId
           : prefectureId // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       address: address == freezed
           ? _value.address
           : address // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       place: place == freezed
           ? _value.place
           : place // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       lat: lat == freezed
           ? _value.lat
           : lat // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       lng: lng == freezed
           ? _value.lng
           : lng // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       accepted: accepted == freezed
           ? _value.accepted
           : accepted // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
       waiting: waiting == freezed
           ? _value.waiting
           : waiting // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
       categories: categories == freezed
           ? _value.categories
           : categories // ignore: cast_nullable_to_non_nullable
-              as List<String>,
+              as List<String?>?,
       owners: owners == freezed
           ? _value.owners
           : owners // ignore: cast_nullable_to_non_nullable
-              as List<Owner>,
+              as List<Owner?>?,
       embedCode: embedCode == freezed
           ? _value.embedCode
           : embedCode // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       updatedAt: updatedAt == freezed
           ? _value.updatedAt
           : updatedAt // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ));
   }
 }
@@ -244,33 +244,33 @@ abstract class _$$_EventCopyWith<$Res> implements $EventCopyWith<$Res> {
       __$$_EventCopyWithImpl<$Res>;
   @override
   $Res call(
-      {String eventId,
-      String title,
-      String summary,
-      String contents,
-      String imagePath,
-      String startedAt,
-      String endedAt,
-      String openedAt,
-      String entryStartedAt,
-      String entryEndedAt,
-      String cancelAt,
-      String capacity,
-      String url,
-      List<String> paymentTypes,
-      List<Ticket> tickets,
-      String cancelPolicy,
-      String prefectureId,
-      String address,
-      String place,
-      String lat,
-      String lng,
-      int accepted,
-      int waiting,
-      List<String> categories,
-      List<Owner> owners,
-      String embedCode,
-      String updatedAt});
+      {String? eventId,
+      String? title,
+      String? summary,
+      String? contents,
+      String? imagePath,
+      String? startedAt,
+      String? endedAt,
+      String? openedAt,
+      String? entryStartedAt,
+      String? entryEndedAt,
+      String? cancelAt,
+      String? capacity,
+      String? url,
+      List<String?>? paymentTypes,
+      List<Ticket?>? tickets,
+      String? cancelPolicy,
+      String? prefectureId,
+      String? address,
+      String? place,
+      String? lat,
+      String? lng,
+      int? accepted,
+      int? waiting,
+      List<String?>? categories,
+      List<Owner?>? owners,
+      String? embedCode,
+      String? updatedAt});
 }
 
 /// @nodoc
@@ -316,117 +316,118 @@ class __$$_EventCopyWithImpl<$Res> extends _$EventCopyWithImpl<$Res>
       eventId: eventId == freezed
           ? _value.eventId
           : eventId // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       title: title == freezed
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       summary: summary == freezed
           ? _value.summary
           : summary // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       contents: contents == freezed
           ? _value.contents
           : contents // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       imagePath: imagePath == freezed
           ? _value.imagePath
           : imagePath // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       startedAt: startedAt == freezed
           ? _value.startedAt
           : startedAt // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       endedAt: endedAt == freezed
           ? _value.endedAt
           : endedAt // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       openedAt: openedAt == freezed
           ? _value.openedAt
           : openedAt // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       entryStartedAt: entryStartedAt == freezed
           ? _value.entryStartedAt
           : entryStartedAt // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       entryEndedAt: entryEndedAt == freezed
           ? _value.entryEndedAt
           : entryEndedAt // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       cancelAt: cancelAt == freezed
           ? _value.cancelAt
           : cancelAt // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       capacity: capacity == freezed
           ? _value.capacity
           : capacity // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       url: url == freezed
           ? _value.url
           : url // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       paymentTypes: paymentTypes == freezed
           ? _value._paymentTypes
           : paymentTypes // ignore: cast_nullable_to_non_nullable
-              as List<String>,
+              as List<String?>?,
       tickets: tickets == freezed
           ? _value._tickets
           : tickets // ignore: cast_nullable_to_non_nullable
-              as List<Ticket>,
+              as List<Ticket?>?,
       cancelPolicy: cancelPolicy == freezed
           ? _value.cancelPolicy
           : cancelPolicy // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       prefectureId: prefectureId == freezed
           ? _value.prefectureId
           : prefectureId // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       address: address == freezed
           ? _value.address
           : address // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       place: place == freezed
           ? _value.place
           : place // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       lat: lat == freezed
           ? _value.lat
           : lat // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       lng: lng == freezed
           ? _value.lng
           : lng // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       accepted: accepted == freezed
           ? _value.accepted
           : accepted // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
       waiting: waiting == freezed
           ? _value.waiting
           : waiting // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
       categories: categories == freezed
           ? _value._categories
           : categories // ignore: cast_nullable_to_non_nullable
-              as List<String>,
+              as List<String?>?,
       owners: owners == freezed
           ? _value._owners
           : owners // ignore: cast_nullable_to_non_nullable
-              as List<Owner>,
+              as List<Owner?>?,
       embedCode: embedCode == freezed
           ? _value.embedCode
           : embedCode // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       updatedAt: updatedAt == freezed
           ? _value.updatedAt
           : updatedAt // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ));
   }
 }
 
 /// @nodoc
-@JsonSerializable()
+
+@JsonSerializable(explicitToJson: true)
 class _$_Event implements _Event {
   const _$_Event(
       {required this.eventId,
@@ -442,8 +443,8 @@ class _$_Event implements _Event {
       required this.cancelAt,
       required this.capacity,
       required this.url,
-      required final List<String> paymentTypes,
-      required final List<Ticket> tickets,
+      required final List<String?>? paymentTypes,
+      required final List<Ticket?>? tickets,
       required this.cancelPolicy,
       required this.prefectureId,
       required this.address,
@@ -452,8 +453,8 @@ class _$_Event implements _Event {
       required this.lng,
       required this.accepted,
       required this.waiting,
-      required final List<String> categories,
-      required final List<Owner> owners,
+      required final List<String?>? categories,
+      required final List<Owner?>? owners,
       required this.embedCode,
       required this.updatedAt})
       : _paymentTypes = paymentTypes,
@@ -465,79 +466,87 @@ class _$_Event implements _Event {
       _$$_EventFromJson(json);
 
   @override
-  final String eventId;
+  final String? eventId;
   @override
-  final String title;
+  final String? title;
   @override
-  final String summary;
+  final String? summary;
   @override
-  final String contents;
+  final String? contents;
   @override
-  final String imagePath;
+  final String? imagePath;
   @override
-  final String startedAt;
+  final String? startedAt;
   @override
-  final String endedAt;
+  final String? endedAt;
   @override
-  final String openedAt;
+  final String? openedAt;
   @override
-  final String entryStartedAt;
+  final String? entryStartedAt;
   @override
-  final String entryEndedAt;
+  final String? entryEndedAt;
   @override
-  final String cancelAt;
+  final String? cancelAt;
   @override
-  final String capacity;
+  final String? capacity;
   @override
-  final String url;
-  final List<String> _paymentTypes;
+  final String? url;
+  final List<String?>? _paymentTypes;
   @override
-  List<String> get paymentTypes {
+  List<String?>? get paymentTypes {
+    final value = _paymentTypes;
+    if (value == null) return null;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_paymentTypes);
+    return EqualUnmodifiableListView(value);
   }
 
-  final List<Ticket> _tickets;
+  final List<Ticket?>? _tickets;
   @override
-  List<Ticket> get tickets {
+  List<Ticket?>? get tickets {
+    final value = _tickets;
+    if (value == null) return null;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_tickets);
-  }
-
-  @override
-  final String cancelPolicy;
-  @override
-  final String prefectureId;
-  @override
-  final String address;
-  @override
-  final String place;
-  @override
-  final String lat;
-  @override
-  final String lng;
-  @override
-  final int accepted;
-  @override
-  final int waiting;
-  final List<String> _categories;
-  @override
-  List<String> get categories {
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_categories);
-  }
-
-  final List<Owner> _owners;
-  @override
-  List<Owner> get owners {
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_owners);
+    return EqualUnmodifiableListView(value);
   }
 
   @override
-  final String embedCode;
+  final String? cancelPolicy;
   @override
-  final String updatedAt;
+  final String? prefectureId;
+  @override
+  final String? address;
+  @override
+  final String? place;
+  @override
+  final String? lat;
+  @override
+  final String? lng;
+  @override
+  final int? accepted;
+  @override
+  final int? waiting;
+  final List<String?>? _categories;
+  @override
+  List<String?>? get categories {
+    final value = _categories;
+    if (value == null) return null;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  final List<Owner?>? _owners;
+  @override
+  List<Owner?>? get owners {
+    final value = _owners;
+    if (value == null) return null;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  @override
+  final String? embedCode;
+  @override
+  final String? updatedAt;
 
   @override
   String toString() {
@@ -630,90 +639,90 @@ class _$_Event implements _Event {
 
 abstract class _Event implements Event {
   const factory _Event(
-      {required final String eventId,
-      required final String title,
-      required final String summary,
-      required final String contents,
-      required final String imagePath,
-      required final String startedAt,
-      required final String endedAt,
-      required final String openedAt,
-      required final String entryStartedAt,
-      required final String entryEndedAt,
-      required final String cancelAt,
-      required final String capacity,
-      required final String url,
-      required final List<String> paymentTypes,
-      required final List<Ticket> tickets,
-      required final String cancelPolicy,
-      required final String prefectureId,
-      required final String address,
-      required final String place,
-      required final String lat,
-      required final String lng,
-      required final int accepted,
-      required final int waiting,
-      required final List<String> categories,
-      required final List<Owner> owners,
-      required final String embedCode,
-      required final String updatedAt}) = _$_Event;
+      {required final String? eventId,
+      required final String? title,
+      required final String? summary,
+      required final String? contents,
+      required final String? imagePath,
+      required final String? startedAt,
+      required final String? endedAt,
+      required final String? openedAt,
+      required final String? entryStartedAt,
+      required final String? entryEndedAt,
+      required final String? cancelAt,
+      required final String? capacity,
+      required final String? url,
+      required final List<String?>? paymentTypes,
+      required final List<Ticket?>? tickets,
+      required final String? cancelPolicy,
+      required final String? prefectureId,
+      required final String? address,
+      required final String? place,
+      required final String? lat,
+      required final String? lng,
+      required final int? accepted,
+      required final int? waiting,
+      required final List<String?>? categories,
+      required final List<Owner?>? owners,
+      required final String? embedCode,
+      required final String? updatedAt}) = _$_Event;
 
   factory _Event.fromJson(Map<String, dynamic> json) = _$_Event.fromJson;
 
   @override
-  String get eventId => throw _privateConstructorUsedError;
+  String? get eventId => throw _privateConstructorUsedError;
   @override
-  String get title => throw _privateConstructorUsedError;
+  String? get title => throw _privateConstructorUsedError;
   @override
-  String get summary => throw _privateConstructorUsedError;
+  String? get summary => throw _privateConstructorUsedError;
   @override
-  String get contents => throw _privateConstructorUsedError;
+  String? get contents => throw _privateConstructorUsedError;
   @override
-  String get imagePath => throw _privateConstructorUsedError;
+  String? get imagePath => throw _privateConstructorUsedError;
   @override
-  String get startedAt => throw _privateConstructorUsedError;
+  String? get startedAt => throw _privateConstructorUsedError;
   @override
-  String get endedAt => throw _privateConstructorUsedError;
+  String? get endedAt => throw _privateConstructorUsedError;
   @override
-  String get openedAt => throw _privateConstructorUsedError;
+  String? get openedAt => throw _privateConstructorUsedError;
   @override
-  String get entryStartedAt => throw _privateConstructorUsedError;
+  String? get entryStartedAt => throw _privateConstructorUsedError;
   @override
-  String get entryEndedAt => throw _privateConstructorUsedError;
+  String? get entryEndedAt => throw _privateConstructorUsedError;
   @override
-  String get cancelAt => throw _privateConstructorUsedError;
+  String? get cancelAt => throw _privateConstructorUsedError;
   @override
-  String get capacity => throw _privateConstructorUsedError;
+  String? get capacity => throw _privateConstructorUsedError;
   @override
-  String get url => throw _privateConstructorUsedError;
+  String? get url => throw _privateConstructorUsedError;
   @override
-  List<String> get paymentTypes => throw _privateConstructorUsedError;
+  List<String?>? get paymentTypes => throw _privateConstructorUsedError;
   @override
-  List<Ticket> get tickets => throw _privateConstructorUsedError;
+  List<Ticket?>? get tickets => throw _privateConstructorUsedError;
   @override
-  String get cancelPolicy => throw _privateConstructorUsedError;
+  String? get cancelPolicy => throw _privateConstructorUsedError;
   @override
-  String get prefectureId => throw _privateConstructorUsedError;
+  String? get prefectureId => throw _privateConstructorUsedError;
   @override
-  String get address => throw _privateConstructorUsedError;
+  String? get address => throw _privateConstructorUsedError;
   @override
-  String get place => throw _privateConstructorUsedError;
+  String? get place => throw _privateConstructorUsedError;
   @override
-  String get lat => throw _privateConstructorUsedError;
+  String? get lat => throw _privateConstructorUsedError;
   @override
-  String get lng => throw _privateConstructorUsedError;
+  String? get lng => throw _privateConstructorUsedError;
   @override
-  int get accepted => throw _privateConstructorUsedError;
+  int? get accepted => throw _privateConstructorUsedError;
   @override
-  int get waiting => throw _privateConstructorUsedError;
+  int? get waiting => throw _privateConstructorUsedError;
   @override
-  List<String> get categories => throw _privateConstructorUsedError;
+  List<String?>? get categories => throw _privateConstructorUsedError;
   @override
-  List<Owner> get owners => throw _privateConstructorUsedError;
+  List<Owner?>? get owners => throw _privateConstructorUsedError;
   @override
-  String get embedCode => throw _privateConstructorUsedError;
+  String? get embedCode => throw _privateConstructorUsedError;
   @override
-  String get updatedAt => throw _privateConstructorUsedError;
+  String? get updatedAt => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$$_EventCopyWith<_$_Event> get copyWith =>
