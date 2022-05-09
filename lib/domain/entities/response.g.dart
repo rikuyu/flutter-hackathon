@@ -11,8 +11,7 @@ _$_Response _$$_ResponseFromJson(Map<String, dynamic> json) => _$_Response(
       start: json['start'] as int?,
       limit: json['limit'] as int?,
       events: (json['events'] as List<dynamic>?)
-          ?.map((e) =>
-              e == null ? null : Event.fromJson(e as Map<String, dynamic>))
+          ?.map((e) => Event.fromJson(e as Map<String, dynamic>))
           .toList(),
     );
 
@@ -21,5 +20,5 @@ Map<String, dynamic> _$$_ResponseToJson(_$_Response instance) =>
       'count': instance.count,
       'start': instance.start,
       'limit': instance.limit,
-      'events': instance.events?.map((e) => e?.toJson()).toList(),
+      'events': instance.events?.map((e) => e.toJson()).toList(),
     };

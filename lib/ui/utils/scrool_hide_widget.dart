@@ -39,7 +39,7 @@ class _ScrollHideWidgetState extends State<ScrollHideWidget> {
       setState(() {
         isVisible = true;
       });
-    } else if (direction == ScrollDirection.reverse && position.pixels >= 200) {
+    } else if (direction == ScrollDirection.reverse && position.pixels >= 350) {
       setState(() {
         isVisible = false;
       });

@@ -24,17 +24,26 @@ mixin _$Event {
   String? get title => throw _privateConstructorUsedError;
   String? get summary => throw _privateConstructorUsedError;
   String? get contents => throw _privateConstructorUsedError;
+  @JsonKey(name: 'image_path')
   String? get imagePath => throw _privateConstructorUsedError;
+  @JsonKey(name: 'started_at')
   String? get startedAt => throw _privateConstructorUsedError;
+  @JsonKey(name: 'ended_at')
   String? get endedAt => throw _privateConstructorUsedError;
+  @JsonKey(name: 'opened_at')
   String? get openedAt => throw _privateConstructorUsedError;
+  @JsonKey(name: 'entry_started_at')
   String? get entryStartedAt => throw _privateConstructorUsedError;
+  @JsonKey(name: 'entry_ended_at')
   String? get entryEndedAt => throw _privateConstructorUsedError;
+  @JsonKey(name: 'cancel_at')
   String? get cancelAt => throw _privateConstructorUsedError;
   String? get capacity => throw _privateConstructorUsedError;
   String? get url => throw _privateConstructorUsedError;
+  @JsonKey(name: 'payment_types')
   List<String?>? get paymentTypes => throw _privateConstructorUsedError;
   List<Ticket?>? get tickets => throw _privateConstructorUsedError;
+  @JsonKey(name: 'cancel_policy')
   String? get cancelPolicy => throw _privateConstructorUsedError;
   String? get prefectureId => throw _privateConstructorUsedError;
   String? get address => throw _privateConstructorUsedError;
@@ -62,18 +71,18 @@ abstract class $EventCopyWith<$Res> {
       String? title,
       String? summary,
       String? contents,
-      String? imagePath,
-      String? startedAt,
-      String? endedAt,
-      String? openedAt,
-      String? entryStartedAt,
-      String? entryEndedAt,
-      String? cancelAt,
+      @JsonKey(name: 'image_path') String? imagePath,
+      @JsonKey(name: 'started_at') String? startedAt,
+      @JsonKey(name: 'ended_at') String? endedAt,
+      @JsonKey(name: 'opened_at') String? openedAt,
+      @JsonKey(name: 'entry_started_at') String? entryStartedAt,
+      @JsonKey(name: 'entry_ended_at') String? entryEndedAt,
+      @JsonKey(name: 'cancel_at') String? cancelAt,
       String? capacity,
       String? url,
-      List<String?>? paymentTypes,
+      @JsonKey(name: 'payment_types') List<String?>? paymentTypes,
       List<Ticket?>? tickets,
-      String? cancelPolicy,
+      @JsonKey(name: 'cancel_policy') String? cancelPolicy,
       String? prefectureId,
       String? address,
       String? place,
@@ -248,18 +257,18 @@ abstract class _$$_EventCopyWith<$Res> implements $EventCopyWith<$Res> {
       String? title,
       String? summary,
       String? contents,
-      String? imagePath,
-      String? startedAt,
-      String? endedAt,
-      String? openedAt,
-      String? entryStartedAt,
-      String? entryEndedAt,
-      String? cancelAt,
+      @JsonKey(name: 'image_path') String? imagePath,
+      @JsonKey(name: 'started_at') String? startedAt,
+      @JsonKey(name: 'ended_at') String? endedAt,
+      @JsonKey(name: 'opened_at') String? openedAt,
+      @JsonKey(name: 'entry_started_at') String? entryStartedAt,
+      @JsonKey(name: 'entry_ended_at') String? entryEndedAt,
+      @JsonKey(name: 'cancel_at') String? cancelAt,
       String? capacity,
       String? url,
-      List<String?>? paymentTypes,
+      @JsonKey(name: 'payment_types') List<String?>? paymentTypes,
       List<Ticket?>? tickets,
-      String? cancelPolicy,
+      @JsonKey(name: 'cancel_policy') String? cancelPolicy,
       String? prefectureId,
       String? address,
       String? place,
@@ -430,33 +439,33 @@ class __$$_EventCopyWithImpl<$Res> extends _$EventCopyWithImpl<$Res>
 @JsonSerializable(explicitToJson: true)
 class _$_Event implements _Event {
   const _$_Event(
-      {required this.eventId,
-      required this.title,
-      required this.summary,
-      required this.contents,
-      required this.imagePath,
-      required this.startedAt,
-      required this.endedAt,
-      required this.openedAt,
-      required this.entryStartedAt,
-      required this.entryEndedAt,
-      required this.cancelAt,
-      required this.capacity,
-      required this.url,
-      required final List<String?>? paymentTypes,
-      required final List<Ticket?>? tickets,
-      required this.cancelPolicy,
-      required this.prefectureId,
-      required this.address,
-      required this.place,
-      required this.lat,
-      required this.lng,
-      required this.accepted,
-      required this.waiting,
-      required final List<String?>? categories,
-      required final List<Owner?>? owners,
-      required this.embedCode,
-      required this.updatedAt})
+      {this.eventId,
+      this.title,
+      this.summary,
+      this.contents,
+      @JsonKey(name: 'image_path') this.imagePath,
+      @JsonKey(name: 'started_at') this.startedAt,
+      @JsonKey(name: 'ended_at') this.endedAt,
+      @JsonKey(name: 'opened_at') this.openedAt,
+      @JsonKey(name: 'entry_started_at') this.entryStartedAt,
+      @JsonKey(name: 'entry_ended_at') this.entryEndedAt,
+      @JsonKey(name: 'cancel_at') this.cancelAt,
+      this.capacity,
+      this.url,
+      @JsonKey(name: 'payment_types') final List<String?>? paymentTypes,
+      final List<Ticket?>? tickets,
+      @JsonKey(name: 'cancel_policy') this.cancelPolicy,
+      this.prefectureId,
+      this.address,
+      this.place,
+      this.lat,
+      this.lng,
+      this.accepted,
+      this.waiting,
+      final List<String?>? categories,
+      final List<Owner?>? owners,
+      this.embedCode,
+      this.updatedAt})
       : _paymentTypes = paymentTypes,
         _tickets = tickets,
         _categories = categories,
@@ -474,18 +483,25 @@ class _$_Event implements _Event {
   @override
   final String? contents;
   @override
+  @JsonKey(name: 'image_path')
   final String? imagePath;
   @override
+  @JsonKey(name: 'started_at')
   final String? startedAt;
   @override
+  @JsonKey(name: 'ended_at')
   final String? endedAt;
   @override
+  @JsonKey(name: 'opened_at')
   final String? openedAt;
   @override
+  @JsonKey(name: 'entry_started_at')
   final String? entryStartedAt;
   @override
+  @JsonKey(name: 'entry_ended_at')
   final String? entryEndedAt;
   @override
+  @JsonKey(name: 'cancel_at')
   final String? cancelAt;
   @override
   final String? capacity;
@@ -493,6 +509,7 @@ class _$_Event implements _Event {
   final String? url;
   final List<String?>? _paymentTypes;
   @override
+  @JsonKey(name: 'payment_types')
   List<String?>? get paymentTypes {
     final value = _paymentTypes;
     if (value == null) return null;
@@ -510,6 +527,7 @@ class _$_Event implements _Event {
   }
 
   @override
+  @JsonKey(name: 'cancel_policy')
   final String? cancelPolicy;
   @override
   final String? prefectureId;
@@ -639,33 +657,33 @@ class _$_Event implements _Event {
 
 abstract class _Event implements Event {
   const factory _Event(
-      {required final String? eventId,
-      required final String? title,
-      required final String? summary,
-      required final String? contents,
-      required final String? imagePath,
-      required final String? startedAt,
-      required final String? endedAt,
-      required final String? openedAt,
-      required final String? entryStartedAt,
-      required final String? entryEndedAt,
-      required final String? cancelAt,
-      required final String? capacity,
-      required final String? url,
-      required final List<String?>? paymentTypes,
-      required final List<Ticket?>? tickets,
-      required final String? cancelPolicy,
-      required final String? prefectureId,
-      required final String? address,
-      required final String? place,
-      required final String? lat,
-      required final String? lng,
-      required final int? accepted,
-      required final int? waiting,
-      required final List<String?>? categories,
-      required final List<Owner?>? owners,
-      required final String? embedCode,
-      required final String? updatedAt}) = _$_Event;
+      {final String? eventId,
+      final String? title,
+      final String? summary,
+      final String? contents,
+      @JsonKey(name: 'image_path') final String? imagePath,
+      @JsonKey(name: 'started_at') final String? startedAt,
+      @JsonKey(name: 'ended_at') final String? endedAt,
+      @JsonKey(name: 'opened_at') final String? openedAt,
+      @JsonKey(name: 'entry_started_at') final String? entryStartedAt,
+      @JsonKey(name: 'entry_ended_at') final String? entryEndedAt,
+      @JsonKey(name: 'cancel_at') final String? cancelAt,
+      final String? capacity,
+      final String? url,
+      @JsonKey(name: 'payment_types') final List<String?>? paymentTypes,
+      final List<Ticket?>? tickets,
+      @JsonKey(name: 'cancel_policy') final String? cancelPolicy,
+      final String? prefectureId,
+      final String? address,
+      final String? place,
+      final String? lat,
+      final String? lng,
+      final int? accepted,
+      final int? waiting,
+      final List<String?>? categories,
+      final List<Owner?>? owners,
+      final String? embedCode,
+      final String? updatedAt}) = _$_Event;
 
   factory _Event.fromJson(Map<String, dynamic> json) = _$_Event.fromJson;
 
@@ -678,28 +696,37 @@ abstract class _Event implements Event {
   @override
   String? get contents => throw _privateConstructorUsedError;
   @override
+  @JsonKey(name: 'image_path')
   String? get imagePath => throw _privateConstructorUsedError;
   @override
+  @JsonKey(name: 'started_at')
   String? get startedAt => throw _privateConstructorUsedError;
   @override
+  @JsonKey(name: 'ended_at')
   String? get endedAt => throw _privateConstructorUsedError;
   @override
+  @JsonKey(name: 'opened_at')
   String? get openedAt => throw _privateConstructorUsedError;
   @override
+  @JsonKey(name: 'entry_started_at')
   String? get entryStartedAt => throw _privateConstructorUsedError;
   @override
+  @JsonKey(name: 'entry_ended_at')
   String? get entryEndedAt => throw _privateConstructorUsedError;
   @override
+  @JsonKey(name: 'cancel_at')
   String? get cancelAt => throw _privateConstructorUsedError;
   @override
   String? get capacity => throw _privateConstructorUsedError;
   @override
   String? get url => throw _privateConstructorUsedError;
   @override
+  @JsonKey(name: 'payment_types')
   List<String?>? get paymentTypes => throw _privateConstructorUsedError;
   @override
   List<Ticket?>? get tickets => throw _privateConstructorUsedError;
   @override
+  @JsonKey(name: 'cancel_policy')
   String? get cancelPolicy => throw _privateConstructorUsedError;
   @override
   String? get prefectureId => throw _privateConstructorUsedError;

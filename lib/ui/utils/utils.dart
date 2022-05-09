@@ -36,4 +36,14 @@ class Utils {
         return "不明なエラー";
     }
   }
+
+  static String convertDate(String text) {
+    if (text.isEmpty) return text;
+    final dateString = text.split("-");
+    final d = int.parse(dateString.last.split("").take(2).toList().join());
+    dateString.removeLast();
+    final dateInt = dateString.map((e) => int.parse(e)).toList();
+    dateInt.insert(dateInt.length, d);
+    return dateInt.join("/");
+  }
 }

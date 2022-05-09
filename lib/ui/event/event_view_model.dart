@@ -31,16 +31,12 @@ class EventViewModel extends StateNotifier<EventState> {
     if (response is Success) {
       final List<Event?> events = response.data;
       final result = Success(data: events, message: response.message);
+      setEvents(events);
       endLoading();
-      print("Success");
-      print(events.length);
-      print(events.last);
       return result;
     } else {
       final result = Failure(data: null, message: response.message);
       endLoading();
-      print("Failure");
-      print(result.data);
       return result;
     }
   }

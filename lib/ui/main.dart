@@ -51,8 +51,8 @@ class _MainPageState extends State<MainPage> {
           child: IndexedStack(
             children: [
               EventPage(controller: controller),
-              Text("2"),
-              Text("3"),
+              const Text("2"),
+              const Text("3"),
             ],
             index: _selectedIndex,
           ),
