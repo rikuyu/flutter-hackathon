@@ -1,5 +1,6 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_hackathon/ui/event/event_page.dart';
 import 'package:flutter_hackathon/ui/utils/scrool_hide_widget.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -33,7 +34,6 @@ class MainPage extends StatefulWidget {
 }
 
 class _MainPageState extends State<MainPage> {
-
   int _selectedIndex = 0;
   ScrollController controller = ScrollController();
 
@@ -49,8 +49,8 @@ class _MainPageState extends State<MainPage> {
       body: Center(
         child: SafeArea(
           child: IndexedStack(
-            children: const [
-              Text("1"),
+            children: [
+              EventPage(controller: controller),
               Text("2"),
               Text("3"),
             ],
