@@ -20,6 +20,7 @@ Event _$EventFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$Event {
+  @JsonKey(name: 'event_id')
   String? get eventId => throw _privateConstructorUsedError;
   String? get title => throw _privateConstructorUsedError;
   String? get summary => throw _privateConstructorUsedError;
@@ -67,7 +68,7 @@ abstract class $EventCopyWith<$Res> {
   factory $EventCopyWith(Event value, $Res Function(Event) then) =
       _$EventCopyWithImpl<$Res>;
   $Res call(
-      {String? eventId,
+      {@JsonKey(name: 'event_id') String? eventId,
       String? title,
       String? summary,
       String? contents,
@@ -253,7 +254,7 @@ abstract class _$$_EventCopyWith<$Res> implements $EventCopyWith<$Res> {
       __$$_EventCopyWithImpl<$Res>;
   @override
   $Res call(
-      {String? eventId,
+      {@JsonKey(name: 'event_id') String? eventId,
       String? title,
       String? summary,
       String? contents,
@@ -439,7 +440,7 @@ class __$$_EventCopyWithImpl<$Res> extends _$EventCopyWithImpl<$Res>
 @JsonSerializable(explicitToJson: true)
 class _$_Event implements _Event {
   const _$_Event(
-      {this.eventId,
+      {@JsonKey(name: 'event_id') this.eventId,
       this.title,
       this.summary,
       this.contents,
@@ -475,6 +476,7 @@ class _$_Event implements _Event {
       _$$_EventFromJson(json);
 
   @override
+  @JsonKey(name: 'event_id')
   final String? eventId;
   @override
   final String? title;
@@ -657,7 +659,7 @@ class _$_Event implements _Event {
 
 abstract class _Event implements Event {
   const factory _Event(
-      {final String? eventId,
+      {@JsonKey(name: 'event_id') final String? eventId,
       final String? title,
       final String? summary,
       final String? contents,
@@ -688,6 +690,7 @@ abstract class _Event implements Event {
   factory _Event.fromJson(Map<String, dynamic> json) = _$_Event.fromJson;
 
   @override
+  @JsonKey(name: 'event_id')
   String? get eventId => throw _privateConstructorUsedError;
   @override
   String? get title => throw _privateConstructorUsedError;

@@ -1,7 +1,11 @@
 import 'dart:convert';
 
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter_hackathon/data/utils/constants.dart';
 import 'package:flutter_hackathon/data/utils/utils.dart';
+import 'package:flutter_hackathon/domain/entities/favorite_event.dart';
 import 'package:flutter_hackathon/domain/entities/response.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:http/http.dart' as http;
@@ -12,6 +16,10 @@ import '../../domain/entities/event.dart';
 final eventDataSourceProvider = Provider((ref) => EventDataSourceImpl());
 
 class EventDataSourceImpl implements EventDataSource {
+
+  final FirebaseFirestore _store = FirebaseFirestore.instance;
+  final FirebaseStorage _storage = FirebaseStorage.instance;
+
   @override
   Future<Result> getEvents() async {
     try {
@@ -32,6 +40,21 @@ class EventDataSourceImpl implements EventDataSource {
       return Failure(data: null, message: "Failure Format $e");
     } catch (e) {
       return Failure(data: null, message: "Error $e");
+    }
+  }
+
+  @override
+  Future<Result> addFavoriteEvent(String userId, FavoriteEvent event) async {
+    try {
+      await _store
+          .collection("member")
+          .doc(userId)
+          .collection("favorite_event")
+          .doc(event.id)
+          .set(FavoriteEvent.toMap(event));
+      return Success(data: null, message: "Success");
+    } on FirebaseAuthException catch (e) {
+      return Failure(data: e.code, message: "Error");
     }
   }
 }

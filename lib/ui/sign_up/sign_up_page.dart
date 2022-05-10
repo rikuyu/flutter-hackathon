@@ -3,6 +3,7 @@ import 'package:flutter_hackathon/ui/sign_up/sign_up_view_model.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../data/utils/utils.dart';
+import '../main.dart';
 import '../utils/password_field_widget.dart';
 import '../utils/utils.dart';
 
@@ -73,6 +74,11 @@ class SignUpPage extends ConsumerWidget {
                               case Success:
                                 Utils.showSnackBar(
                                     context, result.message, Colors.greenAccent);
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) =>
+                                        const MainPage()));
                                 break;
                               case Failure:
                                 Utils.showSnackBar(

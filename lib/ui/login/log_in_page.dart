@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_hackathon/ui/main.dart';
 import 'package:flutter_hackathon/ui/utils/password_field_widget.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -33,7 +34,8 @@ class LogInPage extends ConsumerWidget {
                     const Text("ログイン", style: TextStyle(fontSize: 20)),
                     Padding(
                       padding: const EdgeInsets.fromLTRB(0, 8, 0, 8),
-                      child: Center(child: Image.asset('images/event_icon.png')),
+                      child:
+                          Center(child: Image.asset('images/event_icon.png')),
                     ),
                     TextField(
                       autofocus: true,
@@ -71,6 +73,11 @@ class LogInPage extends ConsumerWidget {
                                 case Success:
                                   Utils.showSnackBar(context, result.message,
                                       Colors.greenAccent);
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) =>
+                                              const MainPage()));
                                   break;
                                 case Failure:
                                   Utils.showSnackBar(

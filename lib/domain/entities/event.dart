@@ -11,7 +11,7 @@ part 'event.g.dart';
 class Event with _$Event {
   @JsonSerializable(explicitToJson: true)
   const factory Event(
-      {String? eventId,
+      {@JsonKey(name: 'event_id') String? eventId,
       String? title,
       String? summary,
       String? contents,

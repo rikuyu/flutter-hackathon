@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hackathon/ui/event/event_item_card.dart';
 import 'package:flutter_hackathon/ui/event/event_view_model.dart';
@@ -13,11 +14,13 @@ class EventPage extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final state = ref.watch(eventViewModelProvider);
+    final notifier = ref.read(eventViewModelProvider.notifier);
 
     final List<Widget> eventsWidget = state.events
         .whereType<Event>()
         .toList()
-        .map((e) => EventItemCard(event: e))
+        .map((e) => EventItemCard(
+            event: e, addFavoriteEvent: notifier.addFavoriteEvent))
         .toList();
 
     return SingleChildScrollView(
@@ -46,11 +49,15 @@ class EventPage extends ConsumerWidget {
           ],
         ),
         if (state.isLoading)
-          Container(
-              color: Colors.white70,
-              child: const Center(
+          Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: const [
+              Center(
                 child: CircularProgressIndicator(),
-              ))
+              ),
+            ],
+          )
       ]),
     );
   }

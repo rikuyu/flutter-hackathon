@@ -1,13 +1,17 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
+import '../../data/utils/utils.dart';
 import '../../domain/entities/event.dart';
 import '../utils/utils.dart';
 
 class EventItemCard extends StatelessWidget {
-  const EventItemCard({Key? key, required this.event}) : super(key: key);
+  const EventItemCard(
+      {Key? key, required this.event, required this.addFavoriteEvent})
+      : super(key: key);
 
   final Event event;
+  final Future<Result<dynamic>> Function(Event) addFavoriteEvent;
 
   @override
   Widget build(BuildContext context) {
@@ -92,7 +96,16 @@ class EventItemCard extends StatelessWidget {
                             color: Colors.blueAccent)),
                   ),
                   IconButton(
-                      onPressed: () {},
+                      onPressed: () async {
+                        final result = await addFavoriteEvent(event);
+                        if (result is Failure) {
+                          Utils.showSnackBar(
+                              context, result.message, Colors.redAccent);
+                        } else {
+                          Utils.showSnackBar(
+                              context, result.message, Colors.greenAccent);
+                        }
+                      },
                       icon:
                           const Icon(Icons.favorite, color: Colors.pinkAccent))
                 ],

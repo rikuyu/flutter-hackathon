@@ -1,6 +1,6 @@
 import '../../data/utils/utils.dart';
 
-abstract class FirebaseRepository {
+abstract class AuthRepository {
   Result isLogIn();
 
   Future<Result> signUp(String email, String password);

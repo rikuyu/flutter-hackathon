@@ -18,7 +18,7 @@ class AuthDataSourceImpl implements AuthDataSource {
       final user = userCredential.user;
       if (user != null) {
         final doc = _store.collection('member').doc(user.uid);
-        await doc.set({"uId": user.uid, "email": email});
+        await doc.set({"uid": user.uid, "email": email});
         return Success(data: user, message: "サインアップ成功");
       }
       return Failure(data: null, message: "サインアップ失敗");
