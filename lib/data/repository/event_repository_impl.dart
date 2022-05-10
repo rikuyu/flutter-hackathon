@@ -21,4 +21,13 @@ class EventRepositoryImpl implements EventRepository {
   @override
   Future<Result> addFavoriteEvent(String userId, FavoriteEvent event) async =>
       await _eventDataSource.addFavoriteEvent(userId, event);
+
+  @override
+  Future<Result> getFavoriteEvents(String userId) async =>
+      await _eventDataSource.getFavoriteEvents(userId);
+
+  @override
+  Future<Result> deleteFavoriteEvent(
+          String userId, FavoriteEvent event) async =>
+      await _eventDataSource.deleteFavoriteEvent(userId, event);
 }

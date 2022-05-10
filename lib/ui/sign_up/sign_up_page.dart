@@ -17,7 +17,7 @@ class SignUpPage extends ConsumerWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Event App"),
+        title: const Text("イベント探しアプリ", style: TextStyle(color: Colors.white)),
       ),
       body: Center(
         child: SingleChildScrollView(

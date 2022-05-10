@@ -6,4 +6,8 @@ abstract class EventRepository {
   Future<Result> getEvents();
 
   Future<Result> addFavoriteEvent(String userId, FavoriteEvent event);
+
+  Future<Result> getFavoriteEvents(String userId);
+
+  Future<Result> deleteFavoriteEvent(String userId, FavoriteEvent event);
 }

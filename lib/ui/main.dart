@@ -6,24 +6,29 @@ import 'package:flutter_hackathon/ui/profile/profile_page.dart';
 import 'package:flutter_hackathon/ui/utils/scrool_hide_widget.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import '../data/utils/utils.dart';
+import 'login/log_in_view_model.dart';
+
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
   runApp(const ProviderScope(child: MyApp()));
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends ConsumerWidget {
   const MyApp({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final status = ref.watch(logInViewModelProvider.notifier).isLogIn();
+
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
         primarySwatch: Colors.orange,
       ),
-      home: const LogInPage(),
+      home: status is Success ? const MainPage() : const LogInPage(),
     );
   }
 }
@@ -53,8 +58,8 @@ class _MainPageState extends State<MainPage> {
           child: IndexedStack(
             children: [
               EventPage(controller: controller),
-              Text("2"),
-              ProfilePage(),
+              const Text("2"),
+              const ProfilePage(),
             ],
             index: _selectedIndex,
           ),

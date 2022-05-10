@@ -1,6 +1,3 @@
-import 'package:flutter_hackathon/data/remote/event_data_source_impl.dart';
-import 'package:flutter_hackathon/domain/data_source/remote/event_data_source.dart';
-import 'package:flutter_hackathon/domain/entities/favorite_event.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../domain/data_source/remote/auth_data_source.dart';

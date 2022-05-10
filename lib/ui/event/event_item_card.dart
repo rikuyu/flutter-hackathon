@@ -1,17 +1,26 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_hackathon/domain/entities/favorite_event.dart';
 
 import '../../data/utils/utils.dart';
 import '../../domain/entities/event.dart';
 import '../utils/utils.dart';
 
 class EventItemCard extends StatelessWidget {
-  const EventItemCard(
-      {Key? key, required this.event, required this.addFavoriteEvent})
-      : super(key: key);
+  const EventItemCard({
+    Key? key,
+    required this.event,
+    required this.favoriteEvent,
+    required this.addFavoriteEvent,
+    required this.deleteFavoriteEvent,
+    required this.isUseFavorite,
+  }) : super(key: key);
 
-  final Event event;
-  final Future<Result<dynamic>> Function(Event) addFavoriteEvent;
+  final Event? event;
+  final FavoriteEvent? favoriteEvent;
+  final Future<Result<dynamic>> Function(Event)? addFavoriteEvent;
+  final Future<Result<dynamic>> Function(FavoriteEvent)? deleteFavoriteEvent;
+  final bool isUseFavorite;
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +31,10 @@ class EventItemCard extends StatelessWidget {
           child: Column(
             children: [
               Wrap(children: [
-                Text(event.title.toString(),
+                Text(
+                    isUseFavorite
+                        ? favoriteEvent!.title.toString()
+                        : event!.title.toString(),
                     style: const TextStyle(
                         fontSize: 18, fontWeight: FontWeight.w600))
               ]),
@@ -35,7 +47,10 @@ class EventItemCard extends StatelessWidget {
                         color: Colors.orangeAccent),
                     Padding(
                       padding: const EdgeInsets.fromLTRB(4, 0, 0, 0),
-                      child: Text(event.address.toString(),
+                      child: Text(
+                          isUseFavorite
+                              ? favoriteEvent!.address.toString()
+                              : event!.address.toString(),
                           style: const TextStyle(fontSize: 14)),
                     )
                   ],
@@ -50,7 +65,10 @@ class EventItemCard extends StatelessWidget {
                         color: Colors.orangeAccent),
                     Padding(
                       padding: const EdgeInsets.fromLTRB(4, 0, 0, 0),
-                      child: Text(Utils.convertDate(event.startedAt.toString()),
+                      child: Text(
+                          Utils.convertDate(isUseFavorite
+                              ? favoriteEvent!.startedAt.toString()
+                              : event!.startedAt.toString()),
                           style: const TextStyle(fontSize: 14)),
                     )
                   ],
@@ -59,9 +77,11 @@ class EventItemCard extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.all(4.0),
                 child: CachedNetworkImage(
-                  imageUrl: event.imagePath.toString(),
+                  imageUrl: isUseFavorite
+                      ? favoriteEvent!.imagePath.toString()
+                      : event!.imagePath.toString(),
                   placeholder: (context, url) => Container(
-                    height: 150,
+                    height: isUseFavorite ? 150 : 110,
                     color: Colors.grey[200],
                     child: const Center(
                       child: CircularProgressIndicator(),
@@ -80,7 +100,10 @@ class EventItemCard extends StatelessWidget {
                 children: [
                   Padding(
                     padding: const EdgeInsets.fromLTRB(8, 2, 8, 0),
-                    child: Text(event.summary.toString(),
+                    child: Text(
+                        isUseFavorite
+                            ? favoriteEvent!.summary.toString()
+                            : event!.summary.toString(),
                         style: const TextStyle(fontSize: 14)),
                   ),
                 ],
@@ -97,13 +120,19 @@ class EventItemCard extends StatelessWidget {
                   ),
                   IconButton(
                       onPressed: () async {
-                        final result = await addFavoriteEvent(event);
-                        if (result is Failure) {
-                          Utils.showSnackBar(
-                              context, result.message, Colors.redAccent);
+                        final Result result;
+                        if (isUseFavorite) {
+                          result = await deleteFavoriteEvent!(favoriteEvent!);
+                          if (result is Failure) {
+                            Utils.showSnackBar(
+                                context, result.message, Colors.redAccent);
+                          }
                         } else {
-                          Utils.showSnackBar(
-                              context, result.message, Colors.greenAccent);
+                          result = await addFavoriteEvent!(event!);
+                          if (result is Success) {
+                            Utils.showSnackBar(
+                                context, result.message, Colors.greenAccent);
+                          }
                         }
                       },
                       icon:

@@ -16,7 +16,6 @@ import '../../domain/entities/event.dart';
 final eventDataSourceProvider = Provider((ref) => EventDataSourceImpl());
 
 class EventDataSourceImpl implements EventDataSource {
-
   final FirebaseFirestore _store = FirebaseFirestore.instance;
   final FirebaseStorage _storage = FirebaseStorage.instance;
 
@@ -52,6 +51,40 @@ class EventDataSourceImpl implements EventDataSource {
           .collection("favorite_event")
           .doc(event.id)
           .set(FavoriteEvent.toMap(event));
+      return Success(data: null, message: "いいねしました");
+    } on FirebaseAuthException catch (e) {
+      return Failure(data: e.code, message: "Error");
+    }
+  }
+
+  @override
+  Future<Result> getFavoriteEvents(String userId) async {
+    try {
+      final QuerySnapshot snapshot = await _store
+          .collection("member")
+          .doc(userId)
+          .collection("favorite_event")
+          .get();
+      final List<QueryDocumentSnapshot<Object?>> data = snapshot.docs;
+      final List<FavoriteEvent> events = data.map((DocumentSnapshot doc) {
+        Map<String, dynamic> event = doc.data()! as Map<String, dynamic>;
+        return FavoriteEvent.fromJson(event, doc.id);
+      }).toList();
+      return Success(data: events, message: "Success");
+    } on FirebaseAuthException catch (e) {
+      return Failure(data: e.code, message: "Error");
+    }
+  }
+
+  @override
+  Future<Result> deleteFavoriteEvent(String userId, FavoriteEvent event) async {
+    try {
+      await _store
+          .collection("member")
+          .doc(userId)
+          .collection("favorite_event")
+          .doc(event.id)
+          .delete();
       return Success(data: null, message: "Success");
     } on FirebaseAuthException catch (e) {
       return Failure(data: e.code, message: "Error");

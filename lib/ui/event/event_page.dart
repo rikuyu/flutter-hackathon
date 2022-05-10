@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hackathon/ui/event/event_item_card.dart';
 import 'package:flutter_hackathon/ui/event/event_view_model.dart';
@@ -20,7 +19,11 @@ class EventPage extends ConsumerWidget {
         .whereType<Event>()
         .toList()
         .map((e) => EventItemCard(
-            event: e, addFavoriteEvent: notifier.addFavoriteEvent))
+            event: e,
+            addFavoriteEvent: notifier.addFavoriteEvent,
+            deleteFavoriteEvent: null,
+            favoriteEvent: null,
+            isUseFavorite: false))
         .toList();
 
     return SingleChildScrollView(
