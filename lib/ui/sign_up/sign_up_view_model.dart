@@ -1,21 +1,20 @@
-
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import '../../data/repository/firebase_respotiory_impl.dart';
+import '../../data/repository/auth_respotiory_impl.dart';
 import '../../data/utils/utils.dart';
 import '../../domain/entities/state/sign_up_state.dart';
-import '../../domain/repository/firebase_repository.dart';
+import '../../domain/repository/auth_repository.dart';
 
 final signUpViewModelProvider =
-StateNotifierProvider<SignUpViewModel, SignUpState>((ref) =>
-    SignUpViewModel(repository: ref.read(firebaseRepositoryProvider)));
+    StateNotifierProvider<SignUpViewModel, SignUpState>(
+        (ref) => SignUpViewModel(repository: ref.read(authRepositoryProvider)));
 
 class SignUpViewModel extends StateNotifier<SignUpState> {
-  SignUpViewModel({required FirebaseRepository repository})
+  SignUpViewModel({required AuthRepository repository})
       : _repository = repository,
         super(const SignUpState());
 
-  final FirebaseRepository _repository;
+  final AuthRepository _repository;
 
   void startLoading() => state = state.copy(isLoading: true);
 

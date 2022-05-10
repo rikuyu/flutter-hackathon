@@ -1,16 +1,15 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../domain/data_source/remote/auth_data_source.dart';
-import '../../domain/repository/firebase_repository.dart';
+import '../../domain/repository/auth_repository.dart';
 import '../remote/auth_data_scource_impl.dart';
 import '../utils/utils.dart';
 
-
-final firebaseRepositoryProvider = Provider((ref) => FirebaseRepositoryImpl(
+final authRepositoryProvider = Provider((ref) => AuthRepositoryImpl(
     authDataSource: ref.read(authDataSourceProvider)));
 
-class FirebaseRepositoryImpl implements FirebaseRepository {
-  FirebaseRepositoryImpl(
+class AuthRepositoryImpl implements AuthRepository {
+  AuthRepositoryImpl(
       {required AuthDataSource authDataSource})
       : _authDataSource = authDataSource;
 
