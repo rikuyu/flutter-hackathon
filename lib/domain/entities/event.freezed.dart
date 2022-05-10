@@ -40,6 +40,8 @@ mixin _$Event {
   @JsonKey(name: 'cancel_at')
   String? get cancelAt => throw _privateConstructorUsedError;
   String? get capacity => throw _privateConstructorUsedError;
+  @JsonKey(name: 'event_url')
+  String? get eventUrl => throw _privateConstructorUsedError;
   String? get url => throw _privateConstructorUsedError;
   @JsonKey(name: 'payment_types')
   List<String?>? get paymentTypes => throw _privateConstructorUsedError;
@@ -80,6 +82,7 @@ abstract class $EventCopyWith<$Res> {
       @JsonKey(name: 'entry_ended_at') String? entryEndedAt,
       @JsonKey(name: 'cancel_at') String? cancelAt,
       String? capacity,
+      @JsonKey(name: 'event_url') String? eventUrl,
       String? url,
       @JsonKey(name: 'payment_types') List<String?>? paymentTypes,
       List<Ticket?>? tickets,
@@ -119,6 +122,7 @@ class _$EventCopyWithImpl<$Res> implements $EventCopyWith<$Res> {
     Object? entryEndedAt = freezed,
     Object? cancelAt = freezed,
     Object? capacity = freezed,
+    Object? eventUrl = freezed,
     Object? url = freezed,
     Object? paymentTypes = freezed,
     Object? tickets = freezed,
@@ -183,6 +187,10 @@ class _$EventCopyWithImpl<$Res> implements $EventCopyWith<$Res> {
       capacity: capacity == freezed
           ? _value.capacity
           : capacity // ignore: cast_nullable_to_non_nullable
+              as String?,
+      eventUrl: eventUrl == freezed
+          ? _value.eventUrl
+          : eventUrl // ignore: cast_nullable_to_non_nullable
               as String?,
       url: url == freezed
           ? _value.url
@@ -266,6 +274,7 @@ abstract class _$$_EventCopyWith<$Res> implements $EventCopyWith<$Res> {
       @JsonKey(name: 'entry_ended_at') String? entryEndedAt,
       @JsonKey(name: 'cancel_at') String? cancelAt,
       String? capacity,
+      @JsonKey(name: 'event_url') String? eventUrl,
       String? url,
       @JsonKey(name: 'payment_types') List<String?>? paymentTypes,
       List<Ticket?>? tickets,
@@ -306,6 +315,7 @@ class __$$_EventCopyWithImpl<$Res> extends _$EventCopyWithImpl<$Res>
     Object? entryEndedAt = freezed,
     Object? cancelAt = freezed,
     Object? capacity = freezed,
+    Object? eventUrl = freezed,
     Object? url = freezed,
     Object? paymentTypes = freezed,
     Object? tickets = freezed,
@@ -370,6 +380,10 @@ class __$$_EventCopyWithImpl<$Res> extends _$EventCopyWithImpl<$Res>
       capacity: capacity == freezed
           ? _value.capacity
           : capacity // ignore: cast_nullable_to_non_nullable
+              as String?,
+      eventUrl: eventUrl == freezed
+          ? _value.eventUrl
+          : eventUrl // ignore: cast_nullable_to_non_nullable
               as String?,
       url: url == freezed
           ? _value.url
@@ -452,6 +466,7 @@ class _$_Event implements _Event {
       @JsonKey(name: 'entry_ended_at') this.entryEndedAt,
       @JsonKey(name: 'cancel_at') this.cancelAt,
       this.capacity,
+      @JsonKey(name: 'event_url') this.eventUrl,
       this.url,
       @JsonKey(name: 'payment_types') final List<String?>? paymentTypes,
       final List<Ticket?>? tickets,
@@ -507,6 +522,9 @@ class _$_Event implements _Event {
   final String? cancelAt;
   @override
   final String? capacity;
+  @override
+  @JsonKey(name: 'event_url')
+  final String? eventUrl;
   @override
   final String? url;
   final List<String?>? _paymentTypes;
@@ -570,7 +588,7 @@ class _$_Event implements _Event {
 
   @override
   String toString() {
-    return 'Event(eventId: $eventId, title: $title, summary: $summary, contents: $contents, imagePath: $imagePath, startedAt: $startedAt, endedAt: $endedAt, openedAt: $openedAt, entryStartedAt: $entryStartedAt, entryEndedAt: $entryEndedAt, cancelAt: $cancelAt, capacity: $capacity, url: $url, paymentTypes: $paymentTypes, tickets: $tickets, cancelPolicy: $cancelPolicy, prefectureId: $prefectureId, address: $address, place: $place, lat: $lat, lng: $lng, accepted: $accepted, waiting: $waiting, categories: $categories, owners: $owners, embedCode: $embedCode, updatedAt: $updatedAt)';
+    return 'Event(eventId: $eventId, title: $title, summary: $summary, contents: $contents, imagePath: $imagePath, startedAt: $startedAt, endedAt: $endedAt, openedAt: $openedAt, entryStartedAt: $entryStartedAt, entryEndedAt: $entryEndedAt, cancelAt: $cancelAt, capacity: $capacity, eventUrl: $eventUrl, url: $url, paymentTypes: $paymentTypes, tickets: $tickets, cancelPolicy: $cancelPolicy, prefectureId: $prefectureId, address: $address, place: $place, lat: $lat, lng: $lng, accepted: $accepted, waiting: $waiting, categories: $categories, owners: $owners, embedCode: $embedCode, updatedAt: $updatedAt)';
   }
 
   @override
@@ -592,6 +610,7 @@ class _$_Event implements _Event {
                 .equals(other.entryEndedAt, entryEndedAt) &&
             const DeepCollectionEquality().equals(other.cancelAt, cancelAt) &&
             const DeepCollectionEquality().equals(other.capacity, capacity) &&
+            const DeepCollectionEquality().equals(other.eventUrl, eventUrl) &&
             const DeepCollectionEquality().equals(other.url, url) &&
             const DeepCollectionEquality()
                 .equals(other._paymentTypes, _paymentTypes) &&
@@ -629,6 +648,7 @@ class _$_Event implements _Event {
         const DeepCollectionEquality().hash(entryEndedAt),
         const DeepCollectionEquality().hash(cancelAt),
         const DeepCollectionEquality().hash(capacity),
+        const DeepCollectionEquality().hash(eventUrl),
         const DeepCollectionEquality().hash(url),
         const DeepCollectionEquality().hash(_paymentTypes),
         const DeepCollectionEquality().hash(_tickets),
@@ -671,6 +691,7 @@ abstract class _Event implements Event {
       @JsonKey(name: 'entry_ended_at') final String? entryEndedAt,
       @JsonKey(name: 'cancel_at') final String? cancelAt,
       final String? capacity,
+      @JsonKey(name: 'event_url') final String? eventUrl,
       final String? url,
       @JsonKey(name: 'payment_types') final List<String?>? paymentTypes,
       final List<Ticket?>? tickets,
@@ -721,6 +742,9 @@ abstract class _Event implements Event {
   String? get cancelAt => throw _privateConstructorUsedError;
   @override
   String? get capacity => throw _privateConstructorUsedError;
+  @override
+  @JsonKey(name: 'event_url')
+  String? get eventUrl => throw _privateConstructorUsedError;
   @override
   String? get url => throw _privateConstructorUsedError;
   @override

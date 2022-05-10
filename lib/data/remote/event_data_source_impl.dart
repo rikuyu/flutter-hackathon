@@ -2,7 +2,6 @@ import 'dart:convert';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter_hackathon/data/utils/constants.dart';
 import 'package:flutter_hackathon/data/utils/utils.dart';
 import 'package:flutter_hackathon/domain/entities/favorite_event.dart';
@@ -17,7 +16,6 @@ final eventDataSourceProvider = Provider((ref) => EventDataSourceImpl());
 
 class EventDataSourceImpl implements EventDataSource {
   final FirebaseFirestore _store = FirebaseFirestore.instance;
-  final FirebaseStorage _storage = FirebaseStorage.instance;
 
   @override
   Future<Result> getEvents() async {

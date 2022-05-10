@@ -26,42 +26,47 @@ class EventPage extends ConsumerWidget {
             isUseFavorite: false))
         .toList();
 
-    return SingleChildScrollView(
-      controller: controller,
-      child: Stack(children: [
-        Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: [
-            if (!state.isLoading)
-              Container(
-                  color: Colors.orange,
-                  width: double.infinity,
-                  height: kToolbarHeight,
-                  child: Center(
+    return Scaffold(
+      body:  SingleChildScrollView(
+          controller: controller,
+          child: Stack(children: [
+            Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                if (!state.isLoading)
+                  Container(
+                      color: Colors.orange,
+                      width: double.infinity,
+                      height: kToolbarHeight,
+                      child: Center(
+                        child: Padding(
+                          padding: const EdgeInsets.all(4.0),
+                          child: Image.asset(
+                            'images/event_icon.png',
+                            width: 40,
+                            height: 40,
+                          ),
+                        ),
+                      )),
+                Column(children: eventsWidget),
+                const SizedBox(height: 30)
+              ],
+            ),
+            if (state.isLoading)
+              Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: const [
+                  Center(
                     child: Padding(
-                      padding: const EdgeInsets.all(4.0),
-                      child: Image.asset(
-                        'images/event_icon.png',
-                        width: 40,
-                        height: 40,
-                      ),
+                      padding: EdgeInsets.fromLTRB(0, 200, 0, 0),
+                      child: CircularProgressIndicator(),
                     ),
-                  )),
-            Column(children: eventsWidget),
-            const SizedBox(height: 30)
-          ],
+                  ),
+                ],
+              )
+          ]),
         ),
-        if (state.isLoading)
-          Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: const [
-              Center(
-                child: CircularProgressIndicator(),
-              ),
-            ],
-          )
-      ]),
-    );
+      );
   }
 }

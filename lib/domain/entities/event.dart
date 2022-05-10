@@ -23,6 +23,7 @@ class Event with _$Event {
       @JsonKey(name: 'entry_ended_at') String? entryEndedAt,
       @JsonKey(name: 'cancel_at') String? cancelAt,
       String? capacity,
+      @JsonKey(name: 'event_url') String? eventUrl,
       String? url,
       @JsonKey(name: 'payment_types') List<String?>? paymentTypes,
       List<Ticket?>? tickets,

@@ -19,6 +19,7 @@ _$_Event _$$_EventFromJson(Map<String, dynamic> json) => _$_Event(
       entryEndedAt: json['entry_ended_at'] as String?,
       cancelAt: json['cancel_at'] as String?,
       capacity: json['capacity'] as String?,
+      eventUrl: json['event_url'] as String?,
       url: json['url'] as String?,
       paymentTypes: (json['payment_types'] as List<dynamic>?)
           ?.map((e) => e as String?)
@@ -59,6 +60,7 @@ Map<String, dynamic> _$$_EventToJson(_$_Event instance) => <String, dynamic>{
       'entry_ended_at': instance.entryEndedAt,
       'cancel_at': instance.cancelAt,
       'capacity': instance.capacity,
+      'event_url': instance.eventUrl,
       'url': instance.url,
       'payment_types': instance.paymentTypes,
       'tickets': instance.tickets?.map((e) => e?.toJson()).toList(),

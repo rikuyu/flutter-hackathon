@@ -30,6 +30,10 @@ class Utils {
         return "未入力項目があります";
       case "password-not-confirmed":
         return "パスワードが一致しません";
+      case "name_max_length":
+        return "名前は最大15文字です";
+      case "description_max_length":
+        return "あいさつは最大200文字です";
       case "unknown-error":
         return "不明なエラー";
       default:

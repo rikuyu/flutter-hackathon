@@ -25,9 +25,7 @@ class MyApp extends ConsumerWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.orange,
-      ),
+      theme: ThemeData(primarySwatch: Colors.orange, hintColor: Colors.orange),
       home: status is Success ? const MainPage() : const LogInPage(),
     );
   }
