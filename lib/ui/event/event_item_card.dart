@@ -50,8 +50,14 @@ class EventItemCard extends StatelessWidget {
                       padding: const EdgeInsets.fromLTRB(4, 0, 0, 0),
                       child: Text(
                           isUseFavorite
-                              ? favoriteEvent!.address.toString()
-                              : event!.address.toString(),
+                              ? favoriteEvent!.address.toString().length >= 15
+                                  ? favoriteEvent!.address
+                                      .toString()
+                                      .substring(0, 15)
+                                  : favoriteEvent!.address.toString()
+                              : event!.address.toString().length >= 15
+                                  ? event!.address.toString().substring(0, 15)
+                                  : event!.address.toString(),
                           style: const TextStyle(fontSize: 14)),
                     )
                   ],
@@ -88,6 +94,8 @@ class EventItemCard extends StatelessWidget {
                       child: CircularProgressIndicator(),
                     ),
                   ),
+                  errorWidget: (context, url, error) =>
+                      const Icon(Icons.error, color: Colors.pinkAccent),
                   fit: BoxFit.fitWidth,
                 ),
               ),

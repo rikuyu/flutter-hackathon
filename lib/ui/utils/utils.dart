@@ -53,6 +53,8 @@ class Utils {
 
   static String createPrefectureName(int n) {
     switch (n) {
+      case 0:
+        return "日本全国";
       case 1:
         return "北海道";
       case 2:

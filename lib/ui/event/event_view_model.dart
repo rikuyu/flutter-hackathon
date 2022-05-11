@@ -33,6 +33,8 @@ class EventViewModel extends StateNotifier<EventState> {
 
   void setEvents(List<Event?> events) => state = state.copy(events: events);
 
+  void setEventPrefecture(int p) => state = state.copy(prefecture: p);
+
   String? getCurrentUserId() {
     final result = _authRepository.getCurrentUserId();
     if (result is Success) {
@@ -59,7 +61,7 @@ class EventViewModel extends StateNotifier<EventState> {
 
   Future<Result> getEvents() async {
     startLoading();
-    final response = await _eventRepository.getEvents();
+    final response = await _eventRepository.getEvents(state.prefecture);
     if (response is Success) {
       final List<Event?> events = response.data;
       final result = Success(data: events, message: response.message);

@@ -16,7 +16,8 @@ class EventRepositoryImpl implements EventRepository {
   final EventDataSource _eventDataSource;
 
   @override
-  Future<Result> getEvents() async => await _eventDataSource.getEvents();
+  Future<Result> getEvents(int prefecture) async =>
+      await _eventDataSource.getEvents(prefecture);
 
   @override
   Future<Result> addFavoriteEvent(String userId, FavoriteEvent event) async =>
