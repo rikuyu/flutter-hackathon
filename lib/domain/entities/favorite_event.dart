@@ -7,6 +7,7 @@ class FavoriteEvent {
   final String? imagePath;
   final String? startedAt;
   final String? address;
+  final String? eventUrl;
 
   FavoriteEvent({
     required this.id,
@@ -15,6 +16,7 @@ class FavoriteEvent {
     required this.imagePath,
     required this.startedAt,
     required this.address,
+    required this.eventUrl,
   });
 
   static FavoriteEvent convertToFavoriteEvent(Event event) => FavoriteEvent(
@@ -23,7 +25,8 @@ class FavoriteEvent {
       summary: event.summary,
       imagePath: event.imagePath,
       startedAt: event.startedAt,
-      address: event.address);
+      address: event.address,
+      eventUrl: event.eventUrl);
 
   FavoriteEvent.fromJson(Map<String, dynamic> json, String eventId)
       : this(
@@ -33,6 +36,7 @@ class FavoriteEvent {
           imagePath: json['imagePath'] as String,
           startedAt: json['startedAt'] as String,
           address: json['address'] as String,
+          eventUrl: json['eventUrl'] as String,
         );
 
   static Map<String, dynamic> toMap(FavoriteEvent event) => {
@@ -42,5 +46,6 @@ class FavoriteEvent {
         "imagePath": event.imagePath,
         "startedAt": event.startedAt,
         "address": event.address,
+        "eventUrl": event.eventUrl,
       };
 }

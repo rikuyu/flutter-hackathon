@@ -1,5 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_hackathon/domain/entities/favorite_event.dart';
 
 import '../../data/utils/utils.dart';
@@ -114,7 +115,15 @@ class EventItemCard extends StatelessWidget {
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 4),
                     child: IconButton(
-                        onPressed: () {},
+                        onPressed: () async {
+                          final data = ClipboardData(
+                              text: isUseFavorite
+                                  ? favoriteEvent!.eventUrl.toString()
+                                  : event!.eventUrl.toString());
+                          await Clipboard.setData(data);
+                          Utils.showSnackBar(
+                              context, "イベントリンクをコピーしました", Colors.blueAccent);
+                        },
                         icon: const Icon(Icons.link_sharp,
                             color: Colors.blueAccent)),
                   ),

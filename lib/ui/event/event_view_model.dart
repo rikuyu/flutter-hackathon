@@ -1,6 +1,6 @@
-import 'package:flutter_hackathon/data/repository/auth_respotiory_impl.dart';
+import 'package:flutter_hackathon/data/repository/user_respotiory_impl.dart';
 import 'package:flutter_hackathon/domain/entities/favorite_event.dart';
-import 'package:flutter_hackathon/domain/repository/auth_repository.dart';
+import 'package:flutter_hackathon/domain/repository/user_repository.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../data/repository/event_repository_impl.dart';
@@ -12,12 +12,12 @@ import '../../domain/repository/event_respository.dart';
 final eventViewModelProvider =
     StateNotifierProvider<EventViewModel, EventState>((ref) => EventViewModel(
         eventRepository: ref.read(eventRepositoryProvider),
-        authRepository: ref.read(authRepositoryProvider)));
+        authRepository: ref.read(userRepositoryProvider)));
 
 class EventViewModel extends StateNotifier<EventState> {
   EventViewModel(
       {required EventRepository eventRepository,
-      required AuthRepository authRepository})
+      required UserRepository authRepository})
       : _eventRepository = eventRepository,
         _authRepository = authRepository,
         super(const EventState(events: [])) {
@@ -25,7 +25,7 @@ class EventViewModel extends StateNotifier<EventState> {
   }
 
   final EventRepository _eventRepository;
-  final AuthRepository _authRepository;
+  final UserRepository _authRepository;
 
   void startLoading() => state = state.copy(isLoading: true);
 
