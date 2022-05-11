@@ -11,7 +11,8 @@ class ProfileState {
       this.name = "",
       this.description = "",
       this.imageFile,
-      this.imageUrl});
+      this.imageUrl,
+      this.prefecture = 27});
 
   final bool isLoading;
   final List<FavoriteEvent> events;
@@ -19,6 +20,7 @@ class ProfileState {
   final String description;
   final File? imageFile;
   final String? imageUrl;
+  final int prefecture;
 
   ProfileState copy(
           {bool? isLoading,
@@ -26,12 +28,14 @@ class ProfileState {
           String? name,
           String? description,
           File? imageFile,
-          String? imageUrl}) =>
+          String? imageUrl,
+          int? prefecture}) =>
       ProfileState(
           isLoading: isLoading ?? this.isLoading,
           events: events ?? this.events,
           name: name ?? this.name,
           description: description ?? this.description,
           imageFile: imageFile ?? this.imageFile,
-          imageUrl: imageUrl ?? this.imageUrl);
+          imageUrl: imageUrl ?? this.imageUrl,
+          prefecture: prefecture ?? this.prefecture);
 }

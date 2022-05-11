@@ -44,7 +44,7 @@ class ProfilePage extends ConsumerWidget {
             height: 80,
             decoration: BoxDecoration(
                 border: Border.all(color: Colors.orange, width: 4),
-                color: Colors.blueAccent,
+                color: Colors.grey,
                 shape: BoxShape.circle));
       }
     }
@@ -205,6 +205,18 @@ class ProfilePage extends ConsumerWidget {
                 ),
               ),
             ],
+          ),
+          Padding(
+            padding: const EdgeInsets.fromLTRB(10, 4, 0, 0),
+            child: Row(
+              children: [
+                const Icon(Icons.location_on_outlined,
+                    color: Colors.orangeAccent),
+                Text(Utils.createPrefectureName(state.prefecture),
+                    style: const TextStyle(fontSize: 16)),
+                const Spacer()
+              ],
+            ),
           ),
           Padding(
             padding: const EdgeInsets.fromLTRB(12, 8, 12, 4),

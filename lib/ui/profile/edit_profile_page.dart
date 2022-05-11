@@ -69,6 +69,58 @@ class EditProfilePage extends ConsumerWidget {
                   notifier.setProfileDescription(description);
                 },
               ),
+              Padding(
+                padding: const EdgeInsets.fromLTRB(0, 4, 0, 0),
+                child: Row(
+                  children: [
+                    const Icon(Icons.location_on_outlined,
+                        color: Colors.orangeAccent),
+                    Padding(
+                      padding: const EdgeInsets.fromLTRB(4, 0, 0, 0),
+                      child: Text(Utils.createPrefectureName(state.prefecture),
+                          style: const TextStyle(fontSize: 16)),
+                    ),
+                    const Spacer(),
+                    IconButton(
+                        onPressed: () async {
+                          await showDialog(
+                            context: context,
+                            barrierDismissible: true,
+                            builder: (_) {
+                              return AlertDialog(
+                                  title: const Text("都道府県を選択", style: TextStyle(color: Colors.orange)),
+                                  content: SizedBox(
+                                      width: double.maxFinite,
+                                      child: ListView.builder(
+                                        itemCount: 47,
+                                        itemBuilder:
+                                            (BuildContext context, int index) {
+                                          return ListTile(
+                                            title: Text(
+                                              Utils.createPrefectureName(
+                                                  index + 1),
+                                              style: TextStyle(
+                                                  color: state.prefecture ==
+                                                          index + 1
+                                                      ? Colors.orange
+                                                      : Colors.black),
+                                            ),
+                                            onTap: () {
+                                              notifier.setProfilePrefecture(
+                                                  index + 1);
+                                              Navigator.pop(context);
+                                            },
+                                          );
+                                        },
+                                      )));
+                            },
+                          );
+                        },
+                        icon:
+                            const Icon(Icons.edit, color: Colors.orangeAccent)),
+                  ],
+                ),
+              ),
               const SizedBox(height: 16),
               Padding(
                 padding: const EdgeInsets.fromLTRB(0, 20, 0, 0),

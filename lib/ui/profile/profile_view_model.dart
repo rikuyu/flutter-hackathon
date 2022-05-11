@@ -42,11 +42,12 @@ class ProfileViewModel extends StateNotifier<ProfileState> {
 
   void setProfileName(String name) => state = state.copy(name: name);
 
-  void setProfileDescription(String description) =>
-      state = state.copy(description: description);
+  void setProfileDescription(String d) => state = state.copy(description: d);
 
   void setProfileImage(String imageUrl) =>
       state = state.copy(imageUrl: imageUrl);
+
+  void setProfilePrefecture(int p) => state = state.copy(prefecture: p);
 
   Future<void> pickImage() async {
     final pickedFile = await picker.pickImage(source: ImageSource.gallery);
@@ -86,13 +87,17 @@ class ProfileViewModel extends StateNotifier<ProfileState> {
         final profile = Profile(
             name: state.name,
             description: state.description,
-            imageUrl: updateImageResult.data);
+            imageUrl: updateImageResult.data,
+            prefecture: state.prefecture);
         setProfileImage(updateImageResult.data);
         return await _userRepository.updateProfile(uid, profile);
       }
     } else {
       final profile = Profile(
-          name: state.name, description: state.description, imageUrl: null);
+          name: state.name,
+          description: state.description,
+          imageUrl: null,
+          prefecture: state.prefecture);
       return await _userRepository.updateProfile(uid, profile);
     }
     return Failure(data: "unknown-error", message: "Failure");
