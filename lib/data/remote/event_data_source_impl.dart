@@ -18,10 +18,13 @@ class EventDataSourceImpl implements EventDataSource {
   final FirebaseFirestore _store = FirebaseFirestore.instance;
 
   @override
-  Future<Result> getEvents() async {
+  Future<Result> getEvents(int prefecture) async {
     try {
-      final Uri url = Uri.parse(Constants.baseUrl);
-      final response = await http.get(url);
+      final String url = prefecture == 0
+          ? Constants.baseUrl
+          : "${Constants.baseUrl}&prefecture_id=$prefecture";
+      final Uri uri = Uri.parse(url);
+      final response = await http.get(uri);
       if (response.statusCode != 200) {
         return Failure(
             data: null, message: "Status Code ${response.statusCode}");
