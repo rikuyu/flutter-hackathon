@@ -2,6 +2,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_hackathon/domain/entities/favorite_event.dart';
+import 'package:flutter_hackathon/ui/event/event_location_page.dart';
 
 import '../../data/utils/utils.dart';
 import '../../domain/entities/event.dart';
@@ -121,6 +122,7 @@ class EventCard extends StatelessWidget {
               Row(
                 children: [
                   const Spacer(),
+                  _locationIcon(context, event, favoriteEvent, isUseFavorite),
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 4),
                     child: IconButton(
@@ -163,5 +165,32 @@ class EventCard extends StatelessWidget {
         onTap: () {},
       ),
     );
+  }
+
+  Widget _locationIcon(
+    BuildContext context,
+    Event? event,
+    FavoriteEvent? favoriteEvent,
+    bool isUseFavorite,
+  ) {
+    if (isUseFavorite) {
+      return const Padding(padding: EdgeInsets.fromLTRB(0, 0, 0, 0));
+    } else {
+      if (event!.lat == null ||
+          event.lng == null ||
+          event.lat!.isEmpty ||
+          event.lng!.isEmpty) {
+        return const Padding(padding: EdgeInsets.fromLTRB(0, 0, 0, 0));
+      } else {
+        return IconButton(
+            onPressed: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => EventLocationPage(event: event)));
+            },
+            icon: const Icon(Icons.location_on, color: Colors.green));
+      }
+    }
   }
 }
