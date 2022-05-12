@@ -162,26 +162,31 @@ class ProfilePage extends ConsumerWidget {
           ),
           SizedBox(height: 2, child: Container(color: Colors.orangeAccent)),
           Expanded(
-            child: SingleChildScrollView(
-              child: state.isLoading
-                  ? Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: const [
-                        Center(
-                          child: CircularProgressIndicator(
-                              color: Colors.cyanAccent),
-                        ),
-                      ],
-                    )
-                  : state.events.isEmpty
-                      ? const Padding(
-                          padding: EdgeInsets.fromLTRB(0, 30, 0, 0),
-                          child: Material(
-                              child: Text("いいねしたイベントがありません",
-                                  style: TextStyle(fontSize: 16))),
-                        )
-                      : Column(children: favoriteEventsWidget),
+            child: RefreshIndicator(
+              onRefresh: () async {
+                notifier.getFavoriteEvents();
+              },
+              child: SingleChildScrollView(
+                child: state.isLoading
+                    ? Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: const [
+                          Center(
+                            child: CircularProgressIndicator(
+                                color: Colors.cyanAccent),
+                          ),
+                        ],
+                      )
+                    : state.events.isEmpty
+                        ? const Padding(
+                            padding: EdgeInsets.fromLTRB(0, 30, 0, 0),
+                            child: Material(
+                                child: Text("いいねしたイベントがありません",
+                                    style: TextStyle(fontSize: 16))),
+                          )
+                        : Column(children: favoriteEventsWidget),
+              ),
             ),
           )
         ],
