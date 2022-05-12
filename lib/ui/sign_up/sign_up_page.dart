@@ -33,7 +33,8 @@ class SignUpPage extends ConsumerWidget {
                     const Text("新規登録", style: TextStyle(fontSize: 20)),
                     Padding(
                       padding: const EdgeInsets.fromLTRB(0, 8, 0, 8),
-                      child: Center(child: Image.asset('images/event_icon.png')),
+                      child:
+                          Center(child: Image.asset('images/event_icon.png')),
                     ),
                     TextField(
                       autofocus: true,
@@ -72,13 +73,13 @@ class SignUpPage extends ConsumerWidget {
                             final result = await notifier.signUp();
                             switch (result.runtimeType) {
                               case Success:
-                                Utils.showSnackBar(
-                                    context, result.message, Colors.greenAccent);
+                                Utils.showSnackBar(context, result.message,
+                                    Colors.greenAccent);
                                 Navigator.push(
                                     context,
                                     MaterialPageRoute(
                                         builder: (context) =>
-                                        const MainPage()));
+                                            const MainPage()));
                                 break;
                               case Failure:
                                 Utils.showSnackBar(
@@ -91,7 +92,8 @@ class SignUpPage extends ConsumerWidget {
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: const [
-                              Text("新規登録", style: TextStyle(color: Colors.white)),
+                              Text("新規登録",
+                                  style: TextStyle(color: Colors.white)),
                               Padding(
                                 padding: EdgeInsets.fromLTRB(4, 0, 0, 0),
                                 child: Icon(Icons.account_circle_outlined,
@@ -109,7 +111,7 @@ class SignUpPage extends ConsumerWidget {
                 Container(
                   color: Colors.white70,
                   child: const Center(
-                    child: CircularProgressIndicator(),
+                    child: CircularProgressIndicator(color: Colors.cyanAccent),
                   ),
                 )
             ],

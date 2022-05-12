@@ -120,7 +120,8 @@ class LogInPage extends ConsumerWidget {
                 ),
               ),
               if (state.isLoading)
-                const Center(child: CircularProgressIndicator())
+                const Center(
+                    child: CircularProgressIndicator(color: Colors.cyanAccent))
             ],
           ),
         ),

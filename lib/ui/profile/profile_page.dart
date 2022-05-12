@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_hackathon/domain/entities/favorite_event.dart';
 import 'package:flutter_hackathon/domain/entities/state/profile_state.dart';
-import 'package:flutter_hackathon/ui/event/event_item_card.dart';
+import 'package:flutter_hackathon/ui/event/event_card.dart';
 import 'package:flutter_hackathon/ui/profile/edit_profile_page.dart';
 import 'package:flutter_hackathon/ui/profile/profile_view_model.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -20,7 +20,7 @@ class ProfilePage extends ConsumerWidget {
     final List<Widget> favoriteEventsWidget = state.events
         .whereType<FavoriteEvent>()
         .toList()
-        .map((e) => EventItemCard(
+        .map((e) => EventCard(
             event: null,
             addFavoriteEvent: null,
             deleteFavoriteEvent: notifier.deleteFavoriteEvent,
@@ -169,7 +169,8 @@ class ProfilePage extends ConsumerWidget {
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: const [
                         Center(
-                          child: CircularProgressIndicator(),
+                          child: CircularProgressIndicator(
+                              color: Colors.cyanAccent),
                         ),
                       ],
                     )

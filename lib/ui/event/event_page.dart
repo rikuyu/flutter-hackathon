@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_hackathon/ui/event/event_item_card.dart';
+import 'package:flutter_hackathon/ui/event/event_card.dart';
 import 'package:flutter_hackathon/ui/event/event_view_model.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -19,7 +19,7 @@ class EventPage extends ConsumerWidget {
     final List<Widget> eventsWidget = state.events
         .whereType<Event>()
         .toList()
-        .map((e) => EventItemCard(
+        .map((e) => EventCard(
             event: e,
             addFavoriteEvent: notifier.addFavoriteEvent,
             deleteFavoriteEvent: null,
@@ -121,7 +121,7 @@ class EventPage extends ConsumerWidget {
                 Center(
                   child: Padding(
                     padding: EdgeInsets.fromLTRB(0, 200, 0, 0),
-                    child: CircularProgressIndicator(),
+                    child: CircularProgressIndicator(color: Colors.cyanAccent),
                   ),
                 ),
               ],
