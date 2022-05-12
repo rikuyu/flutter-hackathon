@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_hackathon/ui/event/event_page.dart';
 import 'package:flutter_hackathon/ui/login/log_in_page.dart';
 import 'package:flutter_hackathon/ui/profile/profile_page.dart';
+import 'package:flutter_hackathon/ui/search/search_page.dart';
 import 'package:flutter_hackathon/ui/utils/scrool_hide_widget.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -24,7 +25,6 @@ class MyApp extends ConsumerWidget {
 
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
       theme: ThemeData(primarySwatch: Colors.orange, hintColor: Colors.orange),
       home: status is Success ? const MainPage() : const LogInPage(),
     );
@@ -56,7 +56,7 @@ class _MainPageState extends State<MainPage> {
           child: IndexedStack(
             children: [
               EventPage(controller: controller),
-              const Text("2"),
+              const SearchPage(),
               const ProfilePage(),
             ],
             index: _selectedIndex,

@@ -7,8 +7,8 @@ import '../../data/utils/utils.dart';
 import '../../domain/entities/event.dart';
 import '../utils/utils.dart';
 
-class EventItemCard extends StatelessWidget {
-  const EventItemCard({
+class EventCard extends StatelessWidget {
+  const EventCard({
     Key? key,
     required this.event,
     required this.favoriteEvent,
@@ -91,7 +91,8 @@ class EventItemCard extends StatelessWidget {
                     height: isUseFavorite ? 150 : 110,
                     color: Colors.grey[200],
                     child: const Center(
-                      child: CircularProgressIndicator(),
+                      child:
+                          CircularProgressIndicator(color: Colors.cyanAccent),
                     ),
                   ),
                   errorWidget: (context, url, error) =>

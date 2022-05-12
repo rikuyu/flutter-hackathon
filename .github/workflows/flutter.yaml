@@ -31,8 +31,5 @@ jobs:
       - name: flutter version
         run: flutter --version
 
-      - name: flutter pub get
-        run: flutter pub get
-
       - name: flutter analyze
         run: flutter analyze

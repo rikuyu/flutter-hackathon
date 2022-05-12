@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 class Utils {
   Utils._();
@@ -151,6 +152,107 @@ class Utils {
         return "沖縄県";
       default:
         return "";
+    }
+  }
+
+  static LatLng getPrefecturePrimarySpot(int n) {
+    switch (n) {
+      case 1:
+        return const LatLng(43.068872199379186, 141.35080894144335);
+      case 2:
+        return const LatLng(40.8288777331682, 140.7346162511356);
+      case 3:
+        return const LatLng(39.704991305332655, 141.13456692738572);
+      case 4:
+        return const LatLng(38.260291642377204, 140.88244822591128);
+      case 5:
+        return const LatLng(39.717068881307334, 140.12968615294733);
+      case 6:
+        return const LatLng(38.2491959003308, 140.32720623754716);
+      case 7:
+        return const LatLng(37.75447729041083, 140.45919678441024);
+      case 8:
+        return const LatLng(36.37095377269737, 140.47624362398898);
+      case 9:
+        return const LatLng(36.37183155428607, 139.7314403258438);
+      case 10:
+        return const LatLng(36.32714523402701, 139.0105077832966);
+      case 11:
+        return const LatLng(35.910081809191674, 139.6243968266694);
+      case 12:
+        return const LatLng(35.61291626933945, 140.113566594756);
+      case 13:
+        return const LatLng(35.68145404892084, 139.76716771232913);
+      case 14:
+        return const LatLng(35.466103415089655, 139.62199762395792);
+      case 15:
+        return const LatLng(37.912326574511496, 139.06181791240778);
+      case 16:
+        return const LatLng(36.70199881807927, 137.2125506951643);
+      case 17:
+        return const LatLng(36.57814448200571, 136.64820211065208);
+      case 18:
+        return const LatLng(36.06196260821276, 136.2234383086328);
+      case 19:
+        return const LatLng(35.67007992433451, 138.56881647027365);
+      case 20:
+        return const LatLng(36.643287840930675, 138.18870807003523);
+      case 21:
+        return const LatLng(35.40973764412015, 136.75644413930152);
+      case 22:
+        return const LatLng(34.97240676842749, 138.3887932085957);
+      case 23:
+        return const LatLng(35.171107923432274, 136.88153689696634);
+      case 24:
+        return const LatLng(34.73418645471776, 136.51032922764256);
+      case 25:
+        return const LatLng(35.003733628222896, 135.8647456679247);
+      case 26:
+        return const LatLng(34.98595117032749, 135.7588180245371);
+      case 27:
+        return const LatLng(34.69276070551103, 135.5317387216106);
+      case 28:
+        return const LatLng(34.82704327913047, 134.69041457975445);
+      case 29:
+        return const LatLng(34.681213546907394, 135.8195308975426);
+      case 30:
+        return const LatLng(34.23233994443118, 135.19170576624387);
+      case 31:
+        return const LatLng(35.49420681576004, 134.2259202541416);
+      case 32:
+        return const LatLng(35.36374534728094, 132.7570235895631);
+      case 33:
+        return const LatLng(34.666368259316066, 133.91774422578558);
+      case 34:
+        return const LatLng(34.3978971518094, 132.47534641043126);
+      case 35:
+        return const LatLng(34.17310178014157, 131.48092462391472);
+      case 36:
+        return const LatLng(34.07448759590957, 134.55109682391156);
+      case 37:
+        return const LatLng(35.35664068174692, 139.39974389511772);
+      case 38:
+        return const LatLng(33.840689238208746, 132.75484328655102);
+      case 39:
+        return const LatLng(33.567535128973724, 133.54373913924047);
+      case 40:
+        return const LatLng(33.589174228864586, 130.3998295527321);
+      case 41:
+        return const LatLng(33.26443643715974, 130.29747189875826);
+      case 42:
+        return const LatLng(32.752501189762164, 129.8688948527053);
+      case 43:
+        return const LatLng(32.79040974380893, 130.6899583122339);
+      case 44:
+        return const LatLng(33.23328591822894, 131.60640252573884);
+      case 45:
+        return const LatLng(31.91595896783144, 131.4321352661703);
+      case 46:
+        return const LatLng(31.585341904724753, 130.54135504789096);
+      case 47:
+        return const LatLng(26.206701689319736, 127.6465851120481);
+      default:
+        return const LatLng(34.69276070551103, 135.5317387216106);
     }
   }
 }

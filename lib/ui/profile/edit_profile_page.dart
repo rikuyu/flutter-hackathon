@@ -88,7 +88,8 @@ class EditProfilePage extends ConsumerWidget {
                             barrierDismissible: true,
                             builder: (_) {
                               return AlertDialog(
-                                  title: const Text("都道府県を選択", style: TextStyle(color: Colors.orange)),
+                                  title: const Text("都道府県を選択",
+                                      style: TextStyle(color: Colors.orange)),
                                   content: SizedBox(
                                       width: double.maxFinite,
                                       child: ListView.builder(
@@ -162,7 +163,7 @@ class EditProfilePage extends ConsumerWidget {
           const Center(
             child: Padding(
               padding: EdgeInsets.fromLTRB(0, 150, 0, 0),
-              child: CircularProgressIndicator(),
+              child: CircularProgressIndicator(color: Colors.cyanAccent),
             ),
           )
       ])),
