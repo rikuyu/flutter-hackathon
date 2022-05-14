@@ -44,7 +44,6 @@ dependencies:
   firebase_storage: ^10.2.14
   firebase_auth: ^3.3.16
 
-  flutter_slidable: ^1.2.0
   image_picker: ^0.8.5
   uuid: ^3.0.6
   flutter_staggered_grid_view: ^0.6.1
@@ -52,6 +51,8 @@ dependencies:
   cached_network_image: ^3.2.0
 
   google_maps_flutter: ^2.0.11
+
+  flutter_native_splash: ^2.1.6
 
 dev_dependencies:
   flutter_test:
@@ -66,9 +67,26 @@ dev_dependencies:
   freezed: ^2.0.3
   json_serializable: ^6.2.0
   build_runner: ^2.1.10
+  flutter_launcher_icons: ^0.9.2
 
+flutter_icons:
+  image_path: "images/event_icon.png"
+  android: true
+  ios: true
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
+
+flutter_native_splash:
+  color: '#fcb453'
+  image: "images/splash_screen.png"
+  color_dark: '#fcb453'
+  image_dark: "images/splash_screen.png"
+  fullscreen: true
+  android_12:
+    icon_background_color: '#fcb453'
+    image: "images/splash_screen.png"
+    icon_background_color_dark: '#fcb453'
+    image_dark: "images/splash_screen.png"
 
 # The following section is specific to Flutter.
 flutter:

@@ -18,6 +18,9 @@ class SignUpPage extends ConsumerWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text("イベント探しアプリ", style: TextStyle(color: Colors.white)),
+        iconTheme: const IconThemeData(
+          color: Colors.white, //change your color here
+        ),
       ),
       body: Center(
         child: SingleChildScrollView(
