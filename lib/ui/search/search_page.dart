@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_hackathon/ui/search/search_view_model.dart';
+import 'package:flutter_hackathon/ui/search/serach_event_card.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
@@ -35,12 +36,36 @@ class SearchPageState extends ConsumerState<SearchPage> {
             return null;
           }
           return Marker(
-            markerId: MarkerId(e.eventId.toString()),
-            infoWindow: InfoWindow(title: e.title),
-            icon: BitmapDescriptor.defaultMarkerWithHue(30),
-            position: LatLng(
-                double.parse(e.lat.toString()), double.parse(e.lng.toString())),
-          );
+              markerId: MarkerId(e.eventId.toString()),
+              infoWindow: InfoWindow(title: e.title),
+              icon: BitmapDescriptor.defaultMarkerWithHue(30),
+              position: LatLng(double.parse(e.lat.toString()),
+                  double.parse(e.lng.toString())),
+              onTap: () {
+                showDialog(
+                  context: context,
+                  barrierDismissible: true,
+                  builder: (_) {
+                    return AlertDialog(
+                        content: SizedBox(
+                          width: double.infinity,
+                          child: SearchEventCard(
+                            event: e,
+                            addFavoriteEvent: notifier.addFavoriteEvent
+                          )
+                        ),
+                        actions: [
+                          Builder(builder: (context) {
+                            return TextButton(
+                              child: const Text("Back"),
+                              onPressed: () => Navigator.pop(context),
+                            );
+                          }),
+                        ],
+                    );
+                  },
+                );
+              });
         })
         .whereType<Marker>()
         .toSet();

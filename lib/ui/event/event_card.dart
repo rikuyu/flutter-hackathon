@@ -151,7 +151,7 @@ class EventCard extends StatelessWidget {
                           result = await addFavoriteEvent!(event!);
                           if (result is Success) {
                             Utils.showSnackBar(
-                                context, result.message, Colors.greenAccent);
+                                context, result.message, Colors.pinkAccent);
                           }
                         }
                       },
